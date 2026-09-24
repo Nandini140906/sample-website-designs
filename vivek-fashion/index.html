@@ -14,6 +14,13 @@
       main > :first-child { margin-top: 0 !important; }
       main > :last-child { margin-bottom: 0 !important; }
     }
+    /* Hero poster: full image on phones; on larger screens fit the first view
+       (below the header and ribbon), trimming mostly the floor so faces and
+       the headline stay in frame. */
+    .hero-poster { width: 100%; height: auto; aspect-ratio: 3 / 2; object-fit: cover; object-position: 50% 5%; }
+    @media (min-width: 768px) {
+      .hero-poster { max-height: max(calc(100svh - 6.75rem), 46vw); }
+    }
   </style>
 <script src="https://cdn.tailwindcss.com"></script>
 <script id="tailwind-config">
@@ -162,7 +169,7 @@
 <!-- 2. FULL TOP SECTION POSTER HERO (Edge-to-edge, uncluttered) -->
 <section class="w-full bg-[#fbf9f5] relative overflow-hidden flex flex-col items-center justify-center border-b border-secondary/20">
 <div class="w-full max-w-[1920px] mx-auto">
-<img alt="Indo-Western Suits Tradition Meets Trend Collection by Vivek Fashion" class="w-full h-auto max-h-[88vh] object-cover object-center block" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCtjyR2wfzVBxaDb0DBMXGwSUPuT4beEd_CQ9h5w6J_KMdCpjDlMPoZHVK_VlESZbpAvYo_HUTMsOGq2TWVZuS0ON63M6Xq62QhPo498Uoxc5xu7jkZRujAe7MRRtZuvVo-6Qifac2NM2Pq1ReLuY0EIpHVEujQJ2s2Yj2aqinjcy3980ZaJ4jPw9FpIgvx_TZZaiKn9mmIyEk0ZGx3UHYXYxIuehOgWv-_aeKvIJi1foJ60HFsCUWQ55t_g3JeOevwJQ">
+<img alt="Indo-Western Suits: Tradition Meets Trend. Timeless ethnic roots, modern you. Collection by Vivek Fashion" class="hero-poster w-full block" fetchpriority="high" height="1024" sizes="(min-width: 1920px) 1920px, 100vw" src="images/hero-poster.webp" srcset="images/hero-poster-768.webp 768w, images/hero-poster.webp 1536w" width="1536">
 </div>
 <!-- Subtle Atelier Ribbon Below Image -->
 <div class="w-full bg-surface-container-low py-3 border-t border-secondary/15 px-4 text-center">
