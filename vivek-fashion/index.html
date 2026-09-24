@@ -14,13 +14,13 @@
       main > :first-child { margin-top: 0 !important; }
       main > :last-child { margin-bottom: 0 !important; }
     }
-    /* The mandala wallpaper exactly as supplied (upscaled 3x so it stays
-       sharp on large screens), at full strength. A fixed layer, so it also
+    /* The mandala wallpaper as supplied (upscaled 3x so it stays sharp on
+       large screens), stretched so the whole picture fills the screen. A fixed layer, so it also
        works on iPhones, which ignore background-attachment: fixed. */
     body { background-color: #cf9a98; }
     body::before {
       content: ""; position: fixed; inset: 0; z-index: -1; pointer-events: none;
-      background: url("images/mandala-bg-1104.webp") center / cover no-repeat;
+      background: url("images/mandala-bg-1104.webp") center / 100% 100% no-repeat; /* whole picture stretched to the screen */
       background-image: image-set(url("images/mandala-bg-1104.webp") 1x, url("images/mandala-bg.webp") 2x);
     }
     /* Large screens stretch the wallpaper most, so always use the full-size file. */
