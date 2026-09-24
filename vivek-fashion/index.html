@@ -14,12 +14,12 @@
       main > :first-child { margin-top: 0 !important; }
       main > :last-child { margin-bottom: 0 !important; }
     }
-    /* Faint mandala behind the whole page (a fixed layer, so it also works
+    /* Faint mandala behind the whole page at 40% (a fixed layer, so it also works
        on iPhones, which ignore background-attachment: fixed). */
     body::before {
       content: ""; position: fixed; inset: 0; z-index: -1; pointer-events: none;
       background: url("images/mandala-bg.webp") center / cover no-repeat;
-      opacity: 0.14;
+      opacity: 0.4;
     }
     /* Header: transparent at the top of the page, white once scrolled
        (and while the mobile menu is open). */
@@ -170,7 +170,6 @@
 <a class="font-label-md text-xs uppercase tracking-[0.2em] text-primary hover:text-secondary transition-colors" href="#karigari">Karigari</a>
 <a class="font-label-md text-xs uppercase tracking-[0.2em] text-primary hover:text-secondary transition-colors" href="#arrivals">Arrivals</a>
 <a class="font-label-md text-xs uppercase tracking-[0.2em] text-primary hover:text-secondary transition-colors" href="#accolades">Accolades</a>
-<a class="font-label-md text-xs uppercase tracking-[0.2em] text-primary hover:text-secondary transition-colors" href="#journal">Journal</a>
 </nav>
 <!-- Right: Minimal Gold Outlined CTA -->
 <div class="flex items-center gap-3">
@@ -189,7 +188,6 @@
 <li><a class="block py-3 font-label-md text-xs uppercase tracking-[0.2em] text-primary hover:text-secondary" href="#karigari">Karigari</a></li>
 <li><a class="block py-3 font-label-md text-xs uppercase tracking-[0.2em] text-primary hover:text-secondary" href="#arrivals">Signature Arrivals</a></li>
 <li><a class="block py-3 font-label-md text-xs uppercase tracking-[0.2em] text-primary hover:text-secondary" href="#accolades">Accolades</a></li>
-<li><a class="block py-3 font-label-md text-xs uppercase tracking-[0.2em] text-primary hover:text-secondary" href="#journal">Journal</a></li>
 <li class="pt-4 sm:hidden"><a class="block text-center font-label-md text-xs uppercase tracking-[0.2em] px-5 py-3 border border-secondary text-primary hover:bg-primary hover:text-surface transition-all" href="#bespoke">Book Appointment</a></li>
 </ul>
 </nav>
@@ -331,7 +329,6 @@
 <span class="font-label-sm text-xs text-secondary tracking-[0.28em] uppercase block mb-2">The Private Vault</span>
 <h2 class="font-headline-lg text-3xl md:text-4xl text-primary font-medium tracking-wide">Signature Arrivals</h2>
 </div>
-<p class="font-label-md text-xs text-on-surface-variant tracking-[0.18em] uppercase mt-4 md:mt-0">Private Salon Viewing by Consignment</p>
 </div>
 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 relative">
 <!-- Ensemble 1 -->
@@ -449,35 +446,6 @@
 </div>
 </div>
 </section>
-<!-- 8. SOCIAL HAVELÎ / LOOKBOOK GALLERY -->
-<section class="w-full py-16 bg-surface-container-low/50 border-t border-secondary/20" id="journal">
-<div class="px-margin-mobile md:px-margin-tablet lg:px-margin mb-8 flex items-center justify-between">
-<div>
-<span class="font-label-sm text-xs text-secondary tracking-[0.25em] uppercase block">Atelier Journal</span>
-<h2 class="font-headline-md text-2xl text-primary">#VivekFashionMaison</h2>
-</div>
-<a class="font-label-md text-xs text-primary hover:text-secondary uppercase tracking-[0.2em] transition-colors" href="#">
-          View Instagram Journal →
-        </a>
-</div>
-<div class="grid grid-cols-2 md:grid-cols-5 gap-3 px-margin-mobile md:px-margin-tablet lg:px-margin">
-<div class="aspect-square overflow-hidden bg-surface-container">
-<img alt="Craft Detail" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDxw9wH1haRaFYx6idujn5RvwHyKl60LQWFcAVUCinsdDDIk-aElSjG86RJyAhQQabAq8hcnxFp9zH9mWgnu1jCYdizonJ19vuMSdPVD5gpQ8LrGBg5nqfkItD7Ldq7QPr63cEwahcucUFCCmqJ4Ub-0KvYguVQUWZdWzqAfwa-n3BZ5M3nKg-3WCuDgX7WXsoCMWT4jVn5dX-qd6HBn3zgca-nEC-FuhHmcrcah0_a0VqVxD3DLT0d">
-</div>
-<div class="aspect-square overflow-hidden bg-surface-container">
-<img alt="Sharara Detail" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCaLSCJ1jCpCvEmTcmqMnqgHvaexEB3OzdT7f0kJGkMEWIjAU1rw7q7gKL9SihDZQhQPwHTHhEsLWrYcG8-EulxznxoXzuNoWIDW167lHORYJbN7j8ol4Hrg6L8Z9qlX3V4QEae-ZWD84eSktfD_6sRkh5fO62ZB7_F1_KB_bGg_EIzamuX1xvS73D_q5nlymsmL_qIsxji1-roZBc0FQNecOyVQ9OOuSCBrxssLpEBchch6bEa2Mcy">
-</div>
-<div class="aspect-square overflow-hidden bg-surface-container">
-<img alt="Zari Embroidery" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCpzUavrMv8EoLk6sX-Ss1XidmfHC9Lj5Dxlb-dKwdax0RZTO58BN8Xd4e4F-IRMXS7Mhyj6yN3fiG1Fw-DKRPS-FzbxGRWb4pWDrwnHMrKXZLPp5_gBSkiZrqUI-OJwYYnE5kKZyLFwXTJxt8IOyUuF6tW4r7PYdyaFXuIT57xCAdNGkfxAozMgMhjRbDHVLqNL4CGFWynQWEIL-KtBPV3QcGHM_X2p04Z7_vwUo34qYKqEtVyHNDN">
-</div>
-<div class="aspect-square overflow-hidden bg-surface-container">
-<img alt="Festive Trousseau" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAR_tTEkBARI70piWk_yXYJJYuZGIMPblUzHHPNr-sRsD0HlkUqgTowXkGcg4bd2ZjrxtveP6o0sT-lNLQlLqQOQDBGVRn8BD4PqTlfEKnvvjd1b5C5dkEu9BPaIGmUfrQKoaEYDkS0Erzmi7Vk2c4DNhtwvJfTMeh1QVO6dpBzI78Ui4P8TBAoqDdKgQKO6zUrd7tJ9TTszSUYEeyiofOnaUx2OmlVph0hSvb7z4dWJeZ4aTb-mE5r">
-</div>
-<div class="aspect-square overflow-hidden bg-surface-container col-span-2 md:col-span-1">
-<img alt="Gold Weaving" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAQm5Zn87CA3kwXT6IAi934Fa7uTChnjrjpfgbxheHLWrlS-PgY40BztNr9JF_o9Fqu6wkgyDWSOTpnvRHHQqkxxD147X58PlpNpHml6BRU484Mic8KHcdeSbmgtJob8Z9q3xvnvgJ7UP70GEt_F2Cuu1OfbmlPzFUgeWQh-YdlCN66ke7YihzxfY08fNLhmzs8stPftUwp0hIL8rBAl-Z-0_CSFRvYLy1XPspR4nptflkfE7c57O0N">
-</div>
-</div>
-</section>
 </main>
 <!-- 9. DEEP MIDNIGHT NAVY FOOTER -->
 <footer class="w-full bg-[#142038] text-surface pt-space-xl pb-space-lg border-t border-secondary/30">
@@ -506,7 +474,6 @@
 <h4 class="font-headline-sm text-headline-sm text-secondary tracking-wider uppercase mb-space-xs">The Maison</h4>
 <a class="font-body-sm text-body-sm text-inverse-on-surface/80 hover:text-secondary transition-colors" href="#arrivals">Signature Arrivals</a>
 <a class="font-body-sm text-body-sm text-inverse-on-surface/80 hover:text-secondary transition-colors" href="#accolades">Royal Accolades</a>
-<a class="font-body-sm text-body-sm text-inverse-on-surface/80 hover:text-secondary transition-colors" href="#journal">Atelier Journal</a>
 </div>
 <div class="flex flex-col space-y-space-sm">
 <h4 class="font-headline-sm text-headline-sm text-secondary tracking-wider uppercase mb-space-xs">Collections</h4>
