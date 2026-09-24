@@ -23,7 +23,7 @@
     }
     /* Header: transparent at the top of the page, white once scrolled
        (and while the mobile menu is open). */
-    .site-header { background: transparent; border-bottom: 1px solid transparent; transition: background-color 300ms ease, border-color 300ms ease, box-shadow 300ms ease; }
+    .site-header { background: linear-gradient(to bottom, rgba(251, 249, 245, 0.75), rgba(251, 249, 245, 0)) border-box no-repeat; border-bottom: 1px solid transparent; transition: background-color 300ms ease, border-color 300ms ease, box-shadow 300ms ease; }
     .site-header.is-solid { background: rgba(255, 255, 255, 0.96); border-bottom-color: rgba(122, 89, 0, 0.2); box-shadow: 0 8px 24px -16px rgba(0, 8, 30, 0.35); -webkit-backdrop-filter: blur(12px); backdrop-filter: blur(12px); }
     /* Hero poster: full image on phones; on larger screens fit the first view
        (below the header and ribbon), trimming mostly the floor so faces and
@@ -31,6 +31,11 @@
     .hero-poster { width: 100%; height: auto; aspect-ratio: 3 / 2; object-fit: cover; object-position: 50% 5%; }
     @media (min-width: 768px) {
       .hero-poster { max-height: max(calc(100svh - 6.75rem), 46vw); }
+    }
+    /* From 1280px the header sits over the poster, so it can be 4rem taller;
+       keep the top edge so the models' faces stay clear of the header. */
+    @media (min-width: 1280px) {
+      .hero-poster { max-height: max(calc(100svh - 2.75rem), 46vw); object-position: 50% 0%; }
     }
     /* Curated Ensembles 3D carousel: the active card faces front, its
        neighbours angle away on either side, the rest wait behind. */
@@ -190,7 +195,7 @@
 </nav>
 </header>
 <!-- MAIN CONTENT -->
-<main class="w-full pt-16 min-h-screen">
+<main class="w-full pt-16 xl:pt-0 min-h-screen">
 <!-- 2. FULL TOP SECTION POSTER HERO (Edge-to-edge, uncluttered) -->
 <section class="w-full relative overflow-hidden flex flex-col items-center justify-center border-b border-secondary/20">
 <div class="w-full max-w-[1920px] mx-auto">
@@ -492,22 +497,23 @@
 </div>
 <!-- Links Grid -->
 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-gutter mb-space-xl"><div class="flex flex-col space-y-space-sm">
+<h4 class="font-headline-sm text-headline-sm text-secondary tracking-wider uppercase mb-space-xs">Explore</h4>
+<a class="font-body-sm text-body-sm text-inverse-on-surface/80 hover:text-secondary transition-colors" href="#top">Home</a>
+<a class="font-body-sm text-body-sm text-inverse-on-surface/80 hover:text-secondary transition-colors" href="#collections">The Curated Ensembles</a>
+<a class="font-body-sm text-body-sm text-inverse-on-surface/80 hover:text-secondary transition-colors" href="#karigari">Karigari</a>
+</div>
+<div class="flex flex-col space-y-space-sm">
 <h4 class="font-headline-sm text-headline-sm text-secondary tracking-wider uppercase mb-space-xs">The Maison</h4>
-<a class="font-body-sm text-body-sm text-inverse-on-surface/80 hover:text-secondary transition-colors" href="#">Our Heritage</a>
-<a class="font-body-sm text-body-sm text-inverse-on-surface/80 hover:text-secondary transition-colors" href="#">Karigari &amp; Craft</a>
-<a class="font-body-sm text-body-sm text-inverse-on-surface/80 hover:text-secondary transition-colors" href="#">Textiles</a>
+<a class="font-body-sm text-body-sm text-inverse-on-surface/80 hover:text-secondary transition-colors" href="#arrivals">Signature Arrivals</a>
+<a class="font-body-sm text-body-sm text-inverse-on-surface/80 hover:text-secondary transition-colors" href="#accolades">Royal Accolades</a>
+<a class="font-body-sm text-body-sm text-inverse-on-surface/80 hover:text-secondary transition-colors" href="#journal">Atelier Journal</a>
 </div>
 <div class="flex flex-col space-y-space-sm">
-<h4 class="font-headline-sm text-headline-sm text-secondary tracking-wider uppercase mb-space-xs">Client Concierge</h4>
-<a class="font-body-sm text-body-sm text-inverse-on-surface/80 hover:text-secondary transition-colors" href="#">Private Appointments</a>
-<a class="font-body-sm text-body-sm text-inverse-on-surface/80 hover:text-secondary transition-colors" href="#">Bespoke Fitting</a>
-<a class="font-body-sm text-body-sm text-inverse-on-surface/80 hover:text-secondary transition-colors" href="#">Global Delivery</a>
-</div>
-<div class="flex flex-col space-y-space-sm">
-<h4 class="font-headline-sm text-headline-sm text-secondary tracking-wider uppercase mb-space-xs">Boutiques</h4>
-<span class="font-body-sm text-body-sm text-inverse-on-surface/80">New Delhi</span>
-<span class="font-body-sm text-body-sm text-inverse-on-surface/80">Mumbai</span>
-<span class="font-body-sm text-body-sm text-inverse-on-surface/80">London</span>
+<h4 class="font-headline-sm text-headline-sm text-secondary tracking-wider uppercase mb-space-xs">Collections</h4>
+<a class="font-body-sm text-body-sm text-inverse-on-surface/80 hover:text-secondary transition-colors" href="#collections">Sharara &amp; Ghagra Sets</a>
+<a class="font-body-sm text-body-sm text-inverse-on-surface/80 hover:text-secondary transition-colors" href="#collections">Indo-Western Suits</a>
+<a class="font-body-sm text-body-sm text-inverse-on-surface/80 hover:text-secondary transition-colors" href="#collections">Anarkalis</a>
+<a class="font-body-sm text-body-sm text-inverse-on-surface/80 hover:text-secondary transition-colors" href="#collections">Bridal &amp; Festive Couture</a>
 </div>
 <div class="flex flex-col space-y-space-sm">
 <h4 class="font-headline-sm text-headline-sm text-secondary tracking-wider uppercase mb-space-xs">The Gazette</h4>
@@ -522,12 +528,10 @@
 <!-- Copyright Bar -->
 <div class="border-t border-secondary/20 pt-space-md flex flex-col md:flex-row items-center justify-between gap-space-sm font-label-sm text-label-sm text-inverse-on-surface/60 tracking-wider uppercase">
 <p class="">© 2026 VIVEK FASHION. ALL RIGHTS RESERVED.</p>
-<div class="flex items-center gap-space-lg">
-<a class="hover:text-secondary transition-colors" href="#">Privacy Charter</a>
-<a class="hover:text-secondary transition-colors" href="#">Atelier Terms</a>
-<a class="hover:text-secondary transition-colors" href="#">Certificate of Authenticity</a>
+<a class="hover:text-secondary transition-colors inline-flex items-center gap-1" href="#top">Back to top <span aria-hidden="true" class="material-symbols-outlined text-sm">arrow_upward</span></a>
 </div>
-</div>
+<!-- Credit -->
+<p class="mt-space-lg pt-space-md border-t border-secondary/10 text-center font-label-sm text-[11px] text-inverse-on-surface/50 tracking-[0.2em] uppercase">Built by <span class="text-secondary-fixed-dim">Nandini Das</span></p>
 </div>
 </footer>
 <script>
