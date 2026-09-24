@@ -14,14 +14,19 @@
       main > :first-child { margin-top: 0 !important; }
       main > :last-child { margin-bottom: 0 !important; }
     }
-    /* Mandala wallpaper behind the whole page, with its copper-gold outlines
-       lifted a little. A fixed layer, so it also works on iPhones, which
+    /* Mandala wallpaper behind the whole page (upscaled 3x for crisp lines),
+       with its copper-gold outlines lifted a little. A fixed layer, so it also works on iPhones, which
        ignore background-attachment: fixed. */
     body::before {
       content: ""; position: fixed; inset: 0; z-index: -1; pointer-events: none;
-      background: url("images/mandala-bg.webp") center / cover no-repeat;
+      background: url("images/mandala-bg-1104.webp") center / cover no-repeat;
+      background-image: image-set(url("images/mandala-bg-1104.webp") 1x, url("images/mandala-bg.webp") 2x);
       filter: saturate(1.25) contrast(1.08);
-      opacity: 0.7;
+      opacity: 0.35;
+    }
+    /* Large screens stretch the wallpaper most, so always use the full-size file. */
+    @media (min-width: 1024px) {
+      body::before { background-image: url("images/mandala-bg.webp"); }
     }
     /* Header: transparent at the top of the page, white once scrolled
        (and while the mobile menu is open). */
