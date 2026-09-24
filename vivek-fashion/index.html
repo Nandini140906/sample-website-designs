@@ -15,14 +15,14 @@
       main > :last-child { margin-bottom: 0 !important; }
     }
     /* The mandala wallpaper exactly as supplied (upscaled 3x so it stays
-       sharp on large screens), at 40% over the picture's own pink. A fixed layer, so it also
+       sharp on large screens), at 30% over the picture's own pink. A fixed layer, so it also
        works on iPhones, which ignore background-attachment: fixed. */
     body { background-color: #cf9a98; }
     body::before {
       content: ""; position: fixed; inset: 0; z-index: -1; pointer-events: none;
       background: url("images/mandala-bg-1104.webp") center / cover no-repeat;
       background-image: image-set(url("images/mandala-bg-1104.webp") 1x, url("images/mandala-bg.webp") 2x);
-      opacity: 0.4;
+      opacity: 0.3;
     }
     /* Large screens stretch the wallpaper most, so always use the full-size file. */
     @media (min-width: 1024px) {
@@ -337,11 +337,9 @@
 </section>
 <!-- 5. SIGNATURE ARRIVALS / VAULT (ALL PRICING STRICTLY REMOVED) -->
 <section class="w-full py-20 px-margin-mobile md:px-margin-tablet lg:px-margin relative" id="arrivals">
-<div class="flex flex-col md:flex-row md:items-end justify-between mb-14 relative">
-<div>
+<div class="text-center max-w-2xl mx-auto mb-14 relative">
 <span class="font-label-sm text-xs text-secondary tracking-[0.28em] uppercase block mb-2">The Private Vault</span>
 <h2 class="font-headline-lg text-3xl md:text-4xl text-primary font-medium tracking-wide">Signature Arrivals</h2>
-</div>
 </div>
 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 relative">
 <!-- Ensemble 1 -->
