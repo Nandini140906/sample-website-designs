@@ -23,9 +23,18 @@
       background: url("images/mandala-bg-1104.webp") center / cover no-repeat;
       background-image: image-set(url("images/mandala-bg-1104.webp") 1x, url("images/mandala-bg.webp") 2x);
     }
-    /* Large screens stretch the wallpaper most, so always use the full-size file. */
+    /* Laptops and larger: show the whole (tall) picture at full screen height,
+       centred, with a blurred, enlarged copy of it filling the sides. */
     @media (min-width: 1024px) {
-      body::before { background-image: url("images/mandala-bg.webp"); }
+      body::before {
+        background-image: url("images/mandala-bg-1104.webp");
+        filter: blur(28px) saturate(1.05);
+        inset: -60px; /* hide the soft edges the blur creates */
+      }
+      body::after {
+        content: ""; position: fixed; inset: 0; z-index: -1; pointer-events: none;
+        background: url("images/mandala-bg.webp") center / auto 100% no-repeat;
+      }
     }
     /* Header: transparent at the top of the page, white once scrolled
        (and while the mobile menu is open). */
