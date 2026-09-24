@@ -14,15 +14,15 @@
       main > :first-child { margin-top: 0 !important; }
       main > :last-child { margin-bottom: 0 !important; }
     }
-    /* Mandala wallpaper behind the whole page (upscaled 3x for crisp lines),
-       with its copper-gold outlines lifted a little. A fixed layer, so it also works on iPhones, which
-       ignore background-attachment: fixed. */
+    /* Blush pink page colour, with the mandala wallpaper only as a soft
+       texture on top. The mandala is a fixed layer, so it also works on
+       iPhones, which ignore background-attachment: fixed. */
+    body { background-color: #f3d5d1; }
     body::before {
       content: ""; position: fixed; inset: 0; z-index: -1; pointer-events: none;
       background: url("images/mandala-bg-1104.webp") center / cover no-repeat;
       background-image: image-set(url("images/mandala-bg-1104.webp") 1x, url("images/mandala-bg.webp") 2x);
-      filter: saturate(1.25) contrast(1.08);
-      opacity: 0.25;
+      opacity: 0.14;
     }
     /* Large screens stretch the wallpaper most, so always use the full-size file. */
     @media (min-width: 1024px) {
@@ -166,7 +166,7 @@
     };
   </script>
 </head>
-<body class="bg-surface font-body-md text-body-md text-on-surface antialiased selection:bg-secondary/20">
+<body class="font-body-md text-body-md text-on-surface antialiased selection:bg-secondary/20">
 <!-- 1. SLEEK MINIMAL LUXURY HEADER -->
 <header class="site-header fixed top-0 left-0 w-full z-50" id="site-header">
 <div class="h-16 w-full px-margin-mobile md:px-margin-tablet lg:px-margin flex items-center justify-between">
@@ -465,7 +465,7 @@
 </div>
 </div>
 <!-- Links Grid -->
-<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-gutter mb-space-xl"><div class="flex flex-col space-y-space-sm">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter mb-space-xl"><div class="flex flex-col space-y-space-sm">
 <h4 class="font-headline-sm text-headline-sm text-secondary tracking-wider uppercase mb-space-xs">Explore</h4>
 <a class="font-body-sm text-body-sm text-inverse-on-surface/80 hover:text-secondary transition-colors" href="#top">Home</a>
 <a class="font-body-sm text-body-sm text-inverse-on-surface/80 hover:text-secondary transition-colors" href="#collections">The Curated Ensembles</a>
@@ -483,16 +483,7 @@
 <a class="font-body-sm text-body-sm text-inverse-on-surface/80 hover:text-secondary transition-colors" href="#collections">Anarkalis</a>
 <a class="font-body-sm text-body-sm text-inverse-on-surface/80 hover:text-secondary transition-colors" href="#collections">Bridal &amp; Festive Couture</a>
 </div>
-<div class="flex flex-col space-y-space-sm">
-<h4 class="font-headline-sm text-headline-sm text-secondary tracking-wider uppercase mb-space-xs">The Gazette</h4>
-<form class="flex flex-col space-y-space-xs mt-1" onsubmit="return false;">
-<div class="flex border border-secondary/50 bg-primary/60">
-<label class="sr-only" for="gazette-email">Email address</label>
-<input autocomplete="email" id="gazette-email" class="bg-transparent px-space-sm py-space-xs font-body-sm text-body-sm text-surface placeholder:text-outline-variant focus:outline-none focus-visible:ring-1 focus-visible:ring-secondary flex-1 min-w-0" placeholder="Email Address" type="email">
-<button class="bg-secondary text-primary px-space-md font-label-sm text-label-sm uppercase tracking-widest hover:bg-secondary-fixed transition-colors font-semibold" type="button">Join</button>
 </div>
-</form>
-</div></div>
 <!-- Copyright Bar -->
 <div class="border-t border-secondary/20 pt-space-md flex flex-col md:flex-row items-center justify-between gap-space-sm font-label-sm text-label-sm text-inverse-on-surface/60 tracking-wider uppercase">
 <p class="">© 2026 VIVEK FASHION. ALL RIGHTS RESERVED.</p>
