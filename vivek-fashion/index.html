@@ -21,6 +21,13 @@
     @media (min-width: 768px) {
       .hero-poster { max-height: max(calc(100svh - 6.75rem), 46vw); }
     }
+    /* Curated Ensembles carousel: 1 card (with a peek of the next) on phones,
+       2 on tablets, 3 on desktop. */
+    .carousel-track { display: flex; gap: 1.5rem; overflow-x: auto; scroll-snap-type: x mandatory; overscroll-behavior-x: contain; scrollbar-width: none; }
+    .carousel-track::-webkit-scrollbar { display: none; }
+    .carousel-slide { flex: 0 0 82%; scroll-snap-align: start; }
+    @media (min-width: 640px) { .carousel-slide { flex-basis: calc((100% - 1.5rem) / 2); } }
+    @media (min-width: 1024px) { .carousel-slide { flex-basis: calc((100% - 3rem) / 3); } }
   </style>
 <script src="https://cdn.tailwindcss.com"></script>
 <script id="tailwind-config">
@@ -192,9 +199,10 @@
 </div>
 <p class="font-body-md text-sm text-on-surface-variant">Intricately draped silhouettes synthesizing regal Mughal durbars with contemporary evening poise.</p>
 </div>
-<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 relative">
+<div aria-label="The Curated Ensembles" aria-roledescription="carousel" class="relative" id="ensembles-carousel" role="region">
+<div class="carousel-track" id="ensembles-track">
 <!-- Card 1 -->
-<div class="group relative overflow-hidden bg-surface-container-lowest border border-secondary/20 hover:border-secondary transition-all duration-300">
+<div aria-label="1 of 4" aria-roledescription="slide" class="carousel-slide group relative overflow-hidden bg-surface-container-lowest border border-secondary/20 hover:border-secondary transition-all duration-300">
 <div class="aspect-[3/4] overflow-hidden bg-surface-container">
 <img alt="Sharara &amp; Ghagra Sets" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCswPm--1_qYnjRBmOSbDyc1wd09nHv0dvPLUm_UWk1Iw7q_it804TQ23jAE6dowJ6s0wDxBwdyUBSQcW0tp9xgh7VK5zPYzVQlGBWqWPt2G3ZoxdsEApatPoZMVSPh-XGdY3Q5fyODMhijZ921zuThpaHpd5buWUx2sExdx796ZewCo8khLfGuyOZhHJp6YnLmwxfweEBgsHjOlvrdQo9JZDHsJrR4mc2Dm4el_axWB5zcDAvwaZ0t">
 </div>
@@ -207,7 +215,7 @@
 </div>
 </div>
 <!-- Card 2 -->
-<div class="group relative overflow-hidden bg-surface-container-lowest border border-secondary/20 hover:border-secondary transition-all duration-300">
+<div aria-label="2 of 4" aria-roledescription="slide" class="carousel-slide group relative overflow-hidden bg-surface-container-lowest border border-secondary/20 hover:border-secondary transition-all duration-300">
 <div class="aspect-[3/4] overflow-hidden bg-surface-container">
 <img alt="Indo-Western Suits - Women's Royal Couture Collection" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAemC-iIujWeJQl3fSp9VkFyLM-ZsIgg611fzvFpys8s_PA9v3YDRaeGKzzK_3NXS0qQihybICc0rgasautQsmglpxPTwrqmIOI_O46pHMW9mlKMMd6LTmcy4fJBiH3Ky47Ov9USaWGA2hyAIoavz3nExhUFetppQlWeAsWb1gARkGVzDqWClL_pfu7oMFyo3RMUF3j2NZmOiwp6L_sYyumjmLILn79-5zx6Pt86mK21T8UnAJ6GnTZ">
 </div>
@@ -220,7 +228,7 @@
 </div>
 </div>
 <!-- Card 3 -->
-<div class="group relative overflow-hidden bg-surface-container-lowest border border-secondary/20 hover:border-secondary transition-all duration-300">
+<div aria-label="3 of 4" aria-roledescription="slide" class="carousel-slide group relative overflow-hidden bg-surface-container-lowest border border-secondary/20 hover:border-secondary transition-all duration-300">
 <div class="aspect-[3/4] overflow-hidden bg-surface-container">
 <img alt="Solo model in royal Anarkali and Kalidar couture gown" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA6sJB4XmaGsG39aCKOZblQPoX3thx5kNeBWf9zdrohkUqKjPmKKC-brzEIZBd6eYkeBn6SxdXjEtjQQ5mpAvisaHvCw0cYSGD89S4e6bKLBcoqlPBF1FlCQ3hoKeeNgRI-TkJUPiV09bPDj12ofEYGGSPJosbDTkHsLLlfo7O1jb8FK4HjHAhOG9NZxtNRiSpv4m01Ek7hlEpoQLvbX8dFDFMEo_0w9NNVFK35j7lmA0LKKl0uR24y">
 </div>
@@ -233,7 +241,7 @@
 </div>
 </div>
 <!-- Card 4 -->
-<div class="group relative overflow-hidden bg-surface-container-lowest border border-secondary/20 hover:border-secondary transition-all duration-300">
+<div aria-label="4 of 4" aria-roledescription="slide" class="carousel-slide group relative overflow-hidden bg-surface-container-lowest border border-secondary/20 hover:border-secondary transition-all duration-300">
 <div class="aspect-[3/4] overflow-hidden bg-surface-container">
 <img alt="Bridal &amp; Festive Couture" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCoiMjnL0CHkh43GWUfqAGbjW_JH27RkZUMIjm2lwN5TCM956qjebMUxhasJ1E50Zev3tp-ekDNeLwhHbCEhX9-n1GCE6fatf9gbrQxlR39tKOt_5cH4aNO1lDhXMvPeQoiCjh4J0vKHqQuzK2IitNFN7ozWfwQSFGAIRPbH0oPGJwae3Ioo99RYcI1mfFMpuMO_3xHaKLtKt0kx4XT1OlP3DS4J9B0inoiaAQUuGH-UMeentKls3ed">
 </div>
@@ -244,6 +252,17 @@
               Discover Silhouettes <span aria-hidden="true" class="material-symbols-outlined text-sm ml-1 group-hover:translate-x-1 transition-transform">arrow_forward</span>
 </a>
 </div>
+</div>
+</div>
+<!-- Carousel Controls -->
+<div class="flex items-center justify-center gap-6 mt-10">
+<button aria-label="Previous ensemble" class="w-10 h-10 flex items-center justify-center border border-secondary/50 text-primary hover:bg-primary hover:text-surface hover:border-primary transition-colors" data-carousel-prev="" type="button">
+<span aria-hidden="true" class="material-symbols-outlined text-lg">arrow_back</span>
+</button>
+<div class="flex items-center gap-3" id="ensembles-dots"></div>
+<button aria-label="Next ensemble" class="w-10 h-10 flex items-center justify-center border border-secondary/50 text-primary hover:bg-primary hover:text-surface hover:border-primary transition-colors" data-carousel-next="" type="button">
+<span aria-hidden="true" class="material-symbols-outlined text-lg">arrow_forward</span>
+</button>
 </div>
 </div>
 </section>
@@ -518,6 +537,98 @@
     menu.addEventListener("click", function (e) {
       if (e.target.closest("a")) setOpen(false);
     });
+  })();
+
+  // Curated Ensembles carousel: loops endlessly by keeping a copy of the
+  // cards on each side and quietly jumping back to the real set.
+  (function () {
+    var root = document.getElementById("ensembles-carousel");
+    var track = document.getElementById("ensembles-track");
+    var dotsBox = document.getElementById("ensembles-dots");
+    var slides = Array.prototype.slice.call(track.children);
+    var count = slides.length;
+    var reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    var index = count; // position within [copies | real | copies]
+    var paused = false;
+    var timer, settleTimer;
+
+    function makeCopies() {
+      return slides.map(function (slide) {
+        var copy = slide.cloneNode(true);
+        copy.setAttribute("aria-hidden", "true");
+        copy.setAttribute("inert", "");
+        return copy;
+      });
+    }
+    makeCopies().reverse().forEach(function (c) { track.insertBefore(c, track.firstChild); });
+    makeCopies().forEach(function (c) { track.appendChild(c); });
+
+    var dots = slides.map(function (slide, i) {
+      var dot = document.createElement("button");
+      dot.type = "button";
+      dot.className = "h-1.5 w-6 bg-secondary/30 transition-all duration-300";
+      dot.setAttribute("aria-label", "Show " + slide.querySelector("h3").textContent.trim());
+      dot.addEventListener("click", function () { goTo(count + i); restart(); });
+      dotsBox.appendChild(dot);
+      return dot;
+    });
+
+    function step() {
+      return track.children[1].offsetLeft - track.children[0].offsetLeft;
+    }
+    function scrollToIndex(i, smooth) {
+      track.scrollTo({ left: i * step(), behavior: smooth && !reduceMotion ? "smooth" : "instant" });
+    }
+    function updateDots() {
+      var active = ((index % count) + count) % count;
+      dots.forEach(function (dot, i) {
+        dot.classList.toggle("bg-secondary", i === active);
+        dot.classList.toggle("w-10", i === active);
+        dot.classList.toggle("bg-secondary/30", i !== active);
+        dot.classList.toggle("w-6", i !== active);
+        if (i === active) dot.setAttribute("aria-current", "true");
+        else dot.removeAttribute("aria-current");
+      });
+    }
+    function goTo(i) {
+      index = i;
+      scrollToIndex(index, true);
+      updateDots();
+    }
+    // Once scrolling stops, move from a copy back onto the matching real card.
+    function settle() {
+      index = Math.round(track.scrollLeft / step());
+      if (index < count) index += count;
+      else if (index >= 2 * count) index -= count;
+      if (Math.abs(track.scrollLeft - index * step()) > 2) scrollToIndex(index, false);
+      updateDots();
+    }
+    track.addEventListener("scroll", function () {
+      clearTimeout(settleTimer);
+      settleTimer = setTimeout(settle, 150);
+    }, { passive: true });
+
+    function restart() {
+      clearInterval(timer);
+      if (!reduceMotion) {
+        timer = setInterval(function () {
+          if (!paused && !document.hidden) goTo(index + 1);
+        }, 4000);
+      }
+    }
+    // Pause while a mouse hovers or the keyboard is inside the carousel.
+    root.addEventListener("pointerenter", function (e) { if (e.pointerType === "mouse") paused = true; });
+    root.addEventListener("pointerleave", function (e) { if (e.pointerType === "mouse") paused = false; });
+    root.addEventListener("focusin", function (e) { if (e.target.matches(":focus-visible")) paused = true; });
+    root.addEventListener("focusout", function () { paused = false; });
+    track.addEventListener("pointerdown", restart);
+    root.querySelector("[data-carousel-prev]").addEventListener("click", function () { goTo(index - 1); restart(); });
+    root.querySelector("[data-carousel-next]").addEventListener("click", function () { goTo(index + 1); restart(); });
+    window.addEventListener("resize", function () { scrollToIndex(index, false); });
+
+    scrollToIndex(index, false);
+    updateDots();
+    restart();
   })();
 </script>
 </body></html>
