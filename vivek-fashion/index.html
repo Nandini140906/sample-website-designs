@@ -14,23 +14,14 @@
       main > :first-child { margin-top: 0 !important; }
       main > :last-child { margin-bottom: 0 !important; }
     }
-    /* Gold line-art mandalas behind the whole page, laid out like the original
-       wallpaper: one centred, two partial ones in opposite corners, over a soft
-       blush wash. A fixed layer, so it also works on iPhones, which ignore
-       background-attachment: fixed. */
+    /* Mandala wallpaper behind the whole page, with its copper-gold outlines
+       lifted a little. A fixed layer, so it also works on iPhones, which
+       ignore background-attachment: fixed. */
     body::before {
-      --m: min(92vw, 92vh, 980px);
-      --c: min(80vw, 820px);
       content: ""; position: fixed; inset: 0; z-index: -1; pointer-events: none;
-      background:
-        url("images/mandala-gold.svg") center / var(--m) var(--m) no-repeat,
-        url("images/mandala-gold.svg") left calc(var(--c) * -0.5) top calc(var(--c) * -0.5) / var(--c) var(--c) no-repeat,
-        url("images/mandala-gold.svg") right calc(var(--c) * -0.5) bottom calc(var(--c) * -0.5) / var(--c) var(--c) no-repeat,
-        radial-gradient(ellipse at center, rgba(236, 205, 198, 0.55), rgba(236, 205, 198, 0.25));
-      opacity: 0.55;
-    }
-    @media (max-width: 767px) {
-      body::before { --m: 150vw; --c: 120vw; }
+      background: url("images/mandala-bg.webp") center / cover no-repeat;
+      filter: saturate(1.25) contrast(1.08);
+      opacity: 0.7;
     }
     /* Header: transparent at the top of the page, white once scrolled
        (and while the mobile menu is open). */
