@@ -1,0 +1,6 @@
+{
+  "rewrites": [
+    { "source": "/", "destination": "/vivek-fashion/index.html" },
+    { "source": "/images/:path*", "destination": "/vivek-fashion/images/:path*" }
+  ]
+}
