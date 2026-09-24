@@ -25,6 +25,13 @@
        (and while the mobile menu is open). */
     .site-header { background: linear-gradient(to bottom, rgba(251, 249, 245, 0.75), rgba(251, 249, 245, 0)) border-box no-repeat; border-bottom: 1px solid transparent; transition: background-color 300ms ease, border-color 300ms ease, box-shadow 300ms ease; }
     .site-header.is-solid { background: rgba(255, 255, 255, 0.96); border-bottom-color: rgba(122, 89, 0, 0.2); box-shadow: 0 8px 24px -16px rgba(0, 8, 30, 0.35); -webkit-backdrop-filter: blur(12px); backdrop-filter: blur(12px); }
+    /* Gold text over the mandala background: deeper gold, a little bolder and
+       a soft cream halo so it separates from the pattern's gold lines. The
+       navy Karigari section keeps its lighter gold. */
+    main section:not(#karigari) .text-secondary {
+      color: #5a3f00; font-weight: 600;
+      text-shadow: 0 0 2px rgba(251, 249, 245, 0.95), 0 0 10px rgba(251, 249, 245, 0.9);
+    }
     /* Hero poster: full image on phones; on larger screens fit the first view
        (below the header and ribbon), trimming mostly the floor so faces and
        the headline stay in frame. */
