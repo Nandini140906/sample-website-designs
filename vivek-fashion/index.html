@@ -21,6 +21,10 @@
       background: url("images/mandala-bg.webp") center / cover no-repeat;
       opacity: 0.14;
     }
+    /* Header: transparent at the top of the page, white once scrolled
+       (and while the mobile menu is open). */
+    .site-header { background: transparent; border-bottom: 1px solid transparent; transition: background-color 300ms ease, border-color 300ms ease, box-shadow 300ms ease; }
+    .site-header.is-solid { background: rgba(255, 255, 255, 0.96); border-bottom-color: rgba(122, 89, 0, 0.2); box-shadow: 0 8px 24px -16px rgba(0, 8, 30, 0.35); -webkit-backdrop-filter: blur(12px); backdrop-filter: blur(12px); }
     /* Hero poster: full image on phones; on larger screens fit the first view
        (below the header and ribbon), trimming mostly the floor so faces and
        the headline stay in frame. */
@@ -145,7 +149,7 @@
 </head>
 <body class="bg-surface font-body-md text-body-md text-on-surface antialiased selection:bg-secondary/20">
 <!-- 1. SLEEK MINIMAL LUXURY HEADER -->
-<header class="fixed top-0 left-0 w-full z-50 bg-[#fbf9f5]/95 backdrop-blur-md border-b border-secondary/25 transition-all">
+<header class="site-header fixed top-0 left-0 w-full z-50" id="site-header">
 <div class="h-16 w-full px-margin-mobile md:px-margin-tablet lg:px-margin flex items-center justify-between">
 <!-- Left: Logo & Crest -->
 <a class="flex items-center gap-3 group" href="#">
@@ -174,7 +178,7 @@
 </div>
 </div>
 <!-- Mobile Menu -->
-<nav aria-label="Main" class="hidden lg:hidden border-t border-secondary/20 bg-[#fbf9f5] px-margin-mobile md:px-margin-tablet py-4" id="mobile-menu">
+<nav aria-label="Main" class="hidden lg:hidden border-t border-secondary/20 bg-white px-margin-mobile md:px-margin-tablet py-4" id="mobile-menu">
 <ul class="flex flex-col divide-y divide-secondary/15">
 <li><a class="block py-3 font-label-md text-xs uppercase tracking-[0.2em] text-primary hover:text-secondary" href="#collections">Collections</a></li>
 <li><a class="block py-3 font-label-md text-xs uppercase tracking-[0.2em] text-primary hover:text-secondary" href="#karigari">Karigari</a></li>
@@ -531,7 +535,16 @@
     var toggle = document.getElementById("menu-toggle");
     var menu = document.getElementById("mobile-menu");
     var icon = toggle.querySelector(".material-symbols-outlined");
+    var header = document.getElementById("site-header");
+    var menuOpen = false;
+    function updateHeader() {
+      header.classList.toggle("is-solid", menuOpen || window.scrollY > 8);
+    }
+    window.addEventListener("scroll", updateHeader, { passive: true });
+    updateHeader();
     function setOpen(open) {
+      menuOpen = open;
+      updateHeader();
       menu.classList.toggle("hidden", !open);
       toggle.setAttribute("aria-expanded", String(open));
       toggle.setAttribute("aria-label", open ? "Close menu" : "Open menu");
