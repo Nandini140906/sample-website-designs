@@ -15,13 +15,14 @@
       main > :last-child { margin-bottom: 0 !important; }
     }
     /* The mandala wallpaper exactly as supplied (upscaled 3x so it stays
-       sharp on large screens), at full strength. A fixed layer, so it also
+       sharp on large screens), at 40% over the picture's own pink. A fixed layer, so it also
        works on iPhones, which ignore background-attachment: fixed. */
     body { background-color: #cf9a98; }
     body::before {
       content: ""; position: fixed; inset: 0; z-index: -1; pointer-events: none;
       background: url("images/mandala-bg-1104.webp") center / cover no-repeat;
       background-image: image-set(url("images/mandala-bg-1104.webp") 1x, url("images/mandala-bg.webp") 2x);
+      opacity: 0.4;
     }
     /* Large screens stretch the wallpaper most, so always use the full-size file. */
     @media (min-width: 1024px) {
