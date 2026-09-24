@@ -14,6 +14,13 @@
       main > :first-child { margin-top: 0 !important; }
       main > :last-child { margin-bottom: 0 !important; }
     }
+    /* Faint mandala behind the whole page (a fixed layer, so it also works
+       on iPhones, which ignore background-attachment: fixed). */
+    body::before {
+      content: ""; position: fixed; inset: 0; z-index: -1; pointer-events: none;
+      background: url("images/mandala-bg.webp") center / cover no-repeat;
+      opacity: 0.14;
+    }
     /* Hero poster: full image on phones; on larger screens fit the first view
        (below the header and ribbon), trimming mostly the floor so faces and
        the headline stay in frame. */
@@ -179,14 +186,14 @@
 </nav>
 </header>
 <!-- MAIN CONTENT -->
-<main class="w-full pt-16 bg-surface min-h-screen">
+<main class="w-full pt-16 min-h-screen">
 <!-- 2. FULL TOP SECTION POSTER HERO (Edge-to-edge, uncluttered) -->
-<section class="w-full bg-[#fbf9f5] relative overflow-hidden flex flex-col items-center justify-center border-b border-secondary/20">
+<section class="w-full relative overflow-hidden flex flex-col items-center justify-center border-b border-secondary/20">
 <div class="w-full max-w-[1920px] mx-auto">
 <img alt="Indo-Western Suits: Tradition Meets Trend. Timeless ethnic roots, modern you. Collection by Vivek Fashion" class="hero-poster w-full block" fetchpriority="high" height="1024" sizes="(min-width: 1920px) 1920px, 100vw" src="images/hero-poster.webp" srcset="images/hero-poster-768.webp 768w, images/hero-poster.webp 1536w" width="1536">
 </div>
 <!-- Subtle Atelier Ribbon Below Image -->
-<div class="w-full bg-surface-container-low py-3 border-t border-secondary/15 px-4 text-center">
+<div class="w-full bg-surface-container-low/60 py-3 border-t border-secondary/15 px-4 text-center">
 <p class="font-label-sm text-[10px] md:text-xs text-on-surface-variant tracking-[0.25em] uppercase flex items-center justify-center gap-3">
 <span class="w-8 h-px bg-secondary/40 hidden sm:inline-block"></span>
           HAUTE COUTURE • HERITAGE ZARDOZI • TAILORED FOR ETERNAL CELEBRATIONS
@@ -195,7 +202,7 @@
 </div>
 </section>
 <!-- 3. CATEGORY SHOWCASE ("THE CURATED ENSEMBLES") -->
-<section class="w-full py-20 px-margin-mobile md:px-margin-tablet lg:px-margin bg-surface relative" id="collections">
+<section class="w-full py-20 px-margin-mobile md:px-margin-tablet lg:px-margin relative" id="collections">
 <div class="text-center max-w-2xl mx-auto mb-10 relative">
 <span class="font-label-sm text-xs text-secondary tracking-[0.28em] uppercase block mb-2">Architectures of Grace</span>
 <h2 class="font-headline-lg text-3xl md:text-4xl text-primary font-medium tracking-wide">The Curated Ensembles</h2>
@@ -204,7 +211,6 @@
 <span aria-hidden="true" class="material-symbols-outlined text-secondary text-sm">diamond</span>
 <span class="h-px flex-1 bg-secondary/50"></span>
 </div>
-<p class="font-body-md text-sm text-on-surface-variant">Intricately draped silhouettes synthesizing regal Mughal durbars with contemporary evening poise.</p>
 </div>
 <div aria-label="The Curated Ensembles" aria-roledescription="carousel" class="relative" id="ensembles-carousel" role="region">
 <div class="coverflow-stage" id="ensembles-stage">
@@ -282,9 +288,6 @@
 <h2 class="font-headline-lg text-3xl md:text-5xl text-surface font-medium leading-tight mb-6">
               The Soul of Indian Karigari
             </h2>
-<p class="font-body-lg text-base text-inverse-on-surface/85 leading-relaxed mb-6 font-light">
-              Every Vivek Fashion ensemble is an ode to ancient Indian atelier traditions. From Lucknowi dabka and Marodi handwork to genuine Varanasi real zari weaves, our karigars devote generations of inherited instinct to render pieces that transcend ephemeral trends.
-            </p>
 <div class="grid grid-cols-3 gap-6 pt-6 border-t border-secondary/25">
 <div>
 <span class="font-headline-md text-3xl md:text-4xl text-secondary-container font-semibold block">350+</span>
@@ -313,7 +316,7 @@
 </div>
 </section>
 <!-- 5. SIGNATURE ARRIVALS / VAULT (ALL PRICING STRICTLY REMOVED) -->
-<section class="w-full py-20 px-margin-mobile md:px-margin-tablet lg:px-margin bg-surface relative" id="arrivals">
+<section class="w-full py-20 px-margin-mobile md:px-margin-tablet lg:px-margin relative" id="arrivals">
 <div class="flex flex-col md:flex-row md:items-end justify-between mb-14 relative">
 <div>
 <span class="font-label-sm text-xs text-secondary tracking-[0.28em] uppercase block mb-2">The Private Vault</span>
@@ -332,8 +335,7 @@
 </div>
 <div class="p-5 flex flex-col flex-1 justify-between">
 <div>
-<h3 class="font-headline-md text-lg text-primary tracking-wide mb-1">Noor Jahan Peplum Sharara</h3>
-<p class="font-body-sm text-xs text-on-surface-variant mb-4">Embroidered pearls, resham jaal &amp; scalloped hem.</p>
+<h3 class="font-headline-md text-lg text-primary tracking-wide mb-4">Noor Jahan Peplum Sharara</h3>
 </div>
 <!-- PRICE COMPLETELY REMOVED -->
 <button class="w-full py-2.5 px-4 bg-primary text-surface font-label-md text-xs uppercase tracking-[0.18em] hover:bg-secondary transition-colors" type="button">
@@ -351,8 +353,7 @@
 </div>
 <div class="p-5 flex flex-col flex-1 justify-between">
 <div>
-<h3 class="font-headline-md text-lg text-primary tracking-wide mb-1">Gulabi Gota Anarkali Set</h3>
-<p class="font-body-sm text-xs text-on-surface-variant mb-4">Handcrafted gotta patti work on hand-spun brocade.</p>
+<h3 class="font-headline-md text-lg text-primary tracking-wide mb-4">Gulabi Gota Anarkali Set</h3>
 </div>
 <!-- PRICE COMPLETELY REMOVED -->
 <button class="w-full py-2.5 px-4 bg-primary text-surface font-label-md text-xs uppercase tracking-[0.18em] hover:bg-secondary transition-colors" type="button">
@@ -370,8 +371,7 @@
 </div>
 <div class="p-5 flex flex-col flex-1 justify-between">
 <div>
-<h3 class="font-headline-md text-lg text-primary tracking-wide mb-1">Zeenat Mustard Cape Suit</h3>
-<p class="font-body-sm text-xs text-on-surface-variant mb-4">Floor-skimming cape tailored with zardozi borders.</p>
+<h3 class="font-headline-md text-lg text-primary tracking-wide mb-4">Zeenat Mustard Cape Suit</h3>
 </div>
 <!-- PRICE COMPLETELY REMOVED -->
 <button class="w-full py-2.5 px-4 bg-primary text-surface font-label-md text-xs uppercase tracking-[0.18em] hover:bg-secondary transition-colors" type="button">
@@ -389,8 +389,7 @@
 </div>
 <div class="p-5 flex flex-col flex-1 justify-between">
 <div>
-<h3 class="font-headline-md text-lg text-primary tracking-wide mb-1">Mehrunissa Velvet Gharara</h3>
-<p class="font-body-sm text-xs text-on-surface-variant mb-4">Deep jewel tones enriched with tilla and dabka.</p>
+<h3 class="font-headline-md text-lg text-primary tracking-wide mb-4">Mehrunissa Velvet Gharara</h3>
 </div>
 <!-- PRICE COMPLETELY REMOVED -->
 <button class="w-full py-2.5 px-4 bg-primary text-surface font-label-md text-xs uppercase tracking-[0.18em] hover:bg-secondary transition-colors" type="button">
@@ -403,7 +402,7 @@
 <!-- 6. BESPOKE COUTURE CONCIERGE -->
 
 <!-- 7. ROYAL ACCOLADES -->
-<section class="w-full py-20 px-margin-mobile md:px-margin-tablet lg:px-margin bg-surface relative" id="accolades">
+<section class="w-full py-20 px-margin-mobile md:px-margin-tablet lg:px-margin relative" id="accolades">
 <div class="text-center max-w-xl mx-auto mb-14 relative">
 <span class="font-label-sm text-xs text-secondary tracking-[0.28em] uppercase block mb-2">Client Patronage</span>
 <h2 class="font-headline-lg text-3xl md:text-4xl text-primary font-medium">Royal Accolades</h2>
@@ -442,7 +441,7 @@
 </div>
 </section>
 <!-- 8. SOCIAL HAVELÎ / LOOKBOOK GALLERY -->
-<section class="w-full py-16 bg-surface-container-low border-t border-secondary/20" id="journal">
+<section class="w-full py-16 bg-surface-container-low/50 border-t border-secondary/20" id="journal">
 <div class="px-margin-mobile md:px-margin-tablet lg:px-margin mb-8 flex items-center justify-between">
 <div>
 <span class="font-label-sm text-xs text-secondary tracking-[0.25em] uppercase block">Atelier Journal</span>
