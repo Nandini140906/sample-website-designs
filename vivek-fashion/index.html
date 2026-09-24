@@ -1,0 +1,469 @@
+<!DOCTYPE html><html lang="en" style=""><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<meta content="web_standard" name="shell-type">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&amp;family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<style>
+    @layer base {
+      html, body { margin: 0; padding: 0; }
+      body { overscroll-behavior: none; }
+      main > :first-child { margin-top: 0 !important; }
+      main > :last-child { margin-bottom: 0 !important; }
+    }
+    ::-webkit-scrollbar { display: none; }
+  </style>
+<script src="https://cdn.tailwindcss.com"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "secondary-container": "#fdce70",
+            "background": "#fbf9f5",
+            "on-primary-fixed": "#0f1b33",
+            "on-secondary-container": "#775600",
+            "on-error-container": "#93000a",
+            "on-primary-container": "#7c88a5",
+            "inverse-surface": "#30312e",
+            "on-surface": "#1b1c1a",
+            "secondary-fixed": "#ffdea3",
+            "outline": "#75777e",
+            "inverse-primary": "#bbc6e6",
+            "surface-dim": "#dbdad6",
+            "primary": "#00081e",
+            "on-surface-variant": "#45474d",
+            "on-primary": "#ffffff",
+            "primary-fixed-dim": "#bbc6e6",
+            "surface-container-lowest": "#ffffff",
+            "primary-container": "#142038",
+            "on-tertiary-fixed-variant": "#633d2d",
+            "error": "#ba1a1a",
+            "on-tertiary-container": "#ac7d69",
+            "on-secondary-fixed-variant": "#5d4200",
+            "error-container": "#ffdad6",
+            "primary-fixed": "#d8e2ff",
+            "on-secondary-fixed": "#261900",
+            "surface-variant": "#e4e2de",
+            "outline-variant": "#c5c6ce",
+            "secondary": "#7a5900",
+            "surface-bright": "#fbf9f5",
+            "on-tertiary": "#ffffff",
+            "surface-container-high": "#eae8e4",
+            "tertiary-fixed-dim": "#f1baa5",
+            "surface-container-highest": "#e4e2de",
+            "surface": "#fbf9f5",
+            "tertiary-container": "#36180a",
+            "secondary-fixed-dim": "#eec064",
+            "inverse-on-surface": "#f2f0ed",
+            "on-primary-fixed-variant": "#3b4761",
+            "on-secondary": "#ffffff",
+            "on-tertiary-fixed": "#301306",
+            "surface-container": "#efeeea",
+            "surface-tint": "#535e79",
+            "surface-container-low": "#f5f3ef",
+            "on-background": "#1b1c1a",
+            "tertiary-fixed": "#ffdbcd",
+            "on-error": "#ffffff",
+            "tertiary": "#170400"
+          },
+          borderRadius: {
+            DEFAULT: "0.25rem",
+            lg: "0.5rem",
+            xl: "0.75rem",
+            full: "9999px"
+          },
+          spacing: {
+            "margin": "4rem",
+            "space-xs": "0.25rem",
+            "margin-mobile": "1.25rem",
+            "gutter": "1.5rem",
+            "margin-tablet": "2rem",
+            "space-lg": "2rem",
+            "space-md": "1rem",
+            "space-xl": "3.5rem",
+            "space-sm": "0.5rem",
+            "gutter-mobile": "0.75rem"
+          },
+          fontFamily: {
+            "display-md": ["Playfair Display"],
+            "headline-lg": ["Playfair Display"],
+            "body-sm": ["Montserrat"],
+            "headline-md": ["Playfair Display"],
+            "body-lg": ["Montserrat"],
+            "display-lg": ["Playfair Display"],
+            "label-md": ["Montserrat"],
+            "display-md-mobile": ["Playfair Display"],
+            "display-lg-mobile": ["Playfair Display"],
+            "label-sm": ["Montserrat"],
+            "headline-sm": ["Playfair Display"],
+            "body-md": ["Montserrat"],
+            "label-lg": ["Montserrat"]
+          }
+        }
+      }
+    };
+  </script>
+</head>
+<body class="bg-surface font-body-md text-body-md text-on-surface antialiased selection:bg-secondary/20" style="background-color: rgb(251, 249, 245); background-image: url(&quot;https://lh3.googleusercontent.com/aida-public/AB6AXuCBorvL7PMed5VU0LXUhDXBU3SJeYFwkN17E3qRC9Z0pyywwFP4PwgZHeL0T5yqoU9etNsXhsuj3Ch6pjMWl6nUZhBCxHOkE5Ga5JiU-69n_UMmDqNzMvyNKXHSaAMNejdk_ppFEHIWP2tmAnkjkCoQ81C5lGZAeHGRjGDRLaLgJdDMHUldviJL9qx24d-begzSWE6Xhc1y8iwmRrWlLERS5NinqPEcxoJ-a1sjojtjbtN-rp2Lry1uN7KF87HhKSwTfA&quot;); background-size: 550px auto; background-repeat: repeat; background-attachment: fixed;">
+<!-- 1. SLEEK MINIMAL LUXURY HEADER -->
+<header class="fixed top-0 left-0 w-full z-50 bg-[#fbf9f5]/95 backdrop-blur-md border-b border-secondary/25 transition-all">
+<div class="h-16 w-full px-margin-mobile md:px-margin-tablet lg:px-margin flex items-center justify-between">
+<!-- Left: Logo & Crest -->
+<a class="flex items-center gap-3 group" href="#">
+<img alt="Vivek Fashion Emblem" class="w-10 h-10 object-contain rounded-full border border-secondary/40 p-0.5 shadow-sm group-hover:border-secondary transition-all" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC399cZlzSHuUcNy0yUrk7pmQpv5xBmdNwqZ_HBpGQ9lHf8o2CUvCBQGfJVV5qmffsGLw0h_p8J3Qz-DN6o9rqeADsBYE4Z2nyt63Xoq1mtPl3u4wXnMeCYelx9VZxeRb2r_w_JxDSsVJgpqr3flnJxkWyoW5tXIepwbBecCMDB8XQO76a7jIYW_1QA6PHoeLIup9kCGU-uOpxGF41YJ1WldJ57ufn2IPyptYqsn_jLRqKwpJDKk9s8G9gHKqxD-pCrjA">
+<div class="flex flex-col">
+<span class="font-headline-sm text-base md:text-lg text-primary tracking-[0.18em] uppercase font-semibold leading-tight">Vivek Fashion</span>
+<span class="font-label-sm text-[9px] text-secondary tracking-[0.28em] uppercase">Royal Indian Atelier</span>
+</div>
+</a>
+<!-- Center: Refined Navigation Links -->
+
+<!-- Right: Minimal Gold Outlined CTA -->
+<div class="flex items-center">
+<a class="inline-flex items-center font-label-md text-xs uppercase tracking-[0.2em] px-5 py-2 border border-secondary text-primary hover:bg-primary hover:text-surface hover:border-primary transition-all duration-300 shadow-sm" href="#bespoke">
+          Book Appointment
+        </a>
+</div>
+</div>
+</header>
+<!-- MAIN CONTENT -->
+<main class="w-full pt-16 bg-surface min-h-screen">
+<!-- 2. FULL TOP SECTION POSTER HERO (Edge-to-edge, uncluttered) -->
+<section class="w-full bg-[#fbf9f5] relative overflow-hidden flex flex-col items-center justify-center border-b border-secondary/20">
+<div class="w-full max-w-[1920px] mx-auto">
+<img alt="Indo-Western Suits Tradition Meets Trend Collection by Vivek Fashion" class="w-full h-auto max-h-[88vh] object-cover object-center block" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCtjyR2wfzVBxaDb0DBMXGwSUPuT4beEd_CQ9h5w6J_KMdCpjDlMPoZHVK_VlESZbpAvYo_HUTMsOGq2TWVZuS0ON63M6Xq62QhPo498Uoxc5xu7jkZRujAe7MRRtZuvVo-6Qifac2NM2Pq1ReLuY0EIpHVEujQJ2s2Yj2aqinjcy3980ZaJ4jPw9FpIgvx_TZZaiKn9mmIyEk0ZGx3UHYXYxIuehOgWv-_aeKvIJi1foJ60HFsCUWQ55t_g3JeOevwJQ">
+</div>
+<!-- Subtle Atelier Ribbon Below Image -->
+<div class="w-full bg-surface-container-low py-3 border-t border-secondary/15 px-4 text-center">
+<p class="font-label-sm text-[10px] md:text-xs text-on-surface-variant tracking-[0.25em] uppercase flex items-center justify-center gap-3">
+<span class="w-8 h-px bg-secondary/40 hidden sm:inline-block"></span>
+          HAUTE COUTURE • HERITAGE ZARDOZI • TAILORED FOR ETERNAL CELEBRATIONS
+          <span class="w-8 h-px bg-secondary/40 hidden sm:inline-block"></span>
+</p>
+</div>
+</section>
+<!-- 3. CATEGORY SHOWCASE ("THE CURATED ENSEMBLES") -->
+<section class="w-full py-20 px-margin-mobile md:px-margin-tablet lg:px-margin bg-surface relative" id="collections">
+<div class="text-center max-w-2xl mx-auto mb-14 relative">
+<span class="font-label-sm text-xs text-secondary tracking-[0.28em] uppercase block mb-2">Architectures of Grace</span>
+<h2 class="font-headline-lg text-3xl md:text-4xl text-primary font-medium tracking-wide">The Curated Ensembles</h2>
+<div class="flex items-center justify-center w-24 mx-auto my-4 gap-2">
+<span class="h-px flex-1 bg-secondary/50"></span>
+<span class="material-symbols-outlined text-secondary text-sm">diamond</span>
+<span class="h-px flex-1 bg-secondary/50"></span>
+</div>
+<p class="font-body-md text-sm text-on-surface-variant">Intricately draped silhouettes synthesizing regal Mughal durbars with contemporary evening poise.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 relative">
+<!-- Card 1 -->
+<div class="group relative overflow-hidden bg-surface-container-lowest border border-secondary/20 hover:border-secondary transition-all duration-300">
+<div class="aspect-[3/4] overflow-hidden bg-surface-container">
+<img alt="Sharara &amp; Gharara Sets" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCswPm--1_qYnjRBmOSbDyc1wd09nHv0dvPLUm_UWk1Iw7q_it804TQ23jAE6dowJ6s0wDxBwdyUBSQcW0tp9xgh7VK5zPYzVQlGBWqWPt2G3ZoxdsEApatPoZMVSPh-XGdY3Q5fyODMhijZ921zuThpaHpd5buWUx2sExdx796ZewCo8khLfGuyOZhHJp6YnLmwxfweEBgsHjOlvrdQo9JZDHsJrR4mc2Dm4el_axWB5zcDAvwaZ0t">
+</div>
+<div class="p-6 text-center">
+<span class="font-label-sm text-[10px] text-secondary tracking-[0.2em] uppercase">Signature Drape</span>
+<h3 class="font-headline-md text-xl text-primary mt-1 mb-3">Sharara &amp; Ghagra Sets</h3>
+<a class="inline-flex items-center font-label-md text-xs tracking-[0.18em] text-primary group-hover:text-secondary uppercase transition-colors" href="#shararas">
+              Discover Silhouettes <span class="material-symbols-outlined text-sm ml-1 group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</a>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="group relative overflow-hidden bg-surface-container-lowest border border-secondary/20 hover:border-secondary transition-all duration-300">
+<div class="aspect-[3/4] overflow-hidden bg-surface-container">
+<img alt="Indo-Western Suits - Women's Royal Couture Collection" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAemC-iIujWeJQl3fSp9VkFyLM-ZsIgg611fzvFpys8s_PA9v3YDRaeGKzzK_3NXS0qQihybICc0rgasautQsmglpxPTwrqmIOI_O46pHMW9mlKMMd6LTmcy4fJBiH3Ky47Ov9USaWGA2hyAIoavz3nExhUFetppQlWeAsWb1gARkGVzDqWClL_pfu7oMFyo3RMUF3j2NZmOiwp6L_sYyumjmLILn79-5zx6Pt86mK21T8UnAJ6GnTZ">
+</div>
+<div class="p-6 text-center">
+<span class="font-label-sm text-[10px] text-secondary tracking-[0.2em] uppercase">Modern Royalty</span>
+<h3 class="font-headline-md text-xl text-primary mt-1 mb-3">Indo-Western Suits</h3>
+<a class="inline-flex items-center font-label-md text-xs tracking-[0.18em] text-primary group-hover:text-secondary uppercase transition-colors" href="#indo-western">
+              Discover Silhouettes <span class="material-symbols-outlined text-sm ml-1 group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</a>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="group relative overflow-hidden bg-surface-container-lowest border border-secondary/20 hover:border-secondary transition-all duration-300">
+<div class="aspect-[3/4] overflow-hidden bg-surface-container">
+<img alt="Solo model in royal Anarkali and Kalidar couture gown" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA6sJB4XmaGsG39aCKOZblQPoX3thx5kNeBWf9zdrohkUqKjPmKKC-brzEIZBd6eYkeBn6SxdXjEtjQQ5mpAvisaHvCw0cYSGD89S4e6bKLBcoqlPBF1FlCQ3hoKeeNgRI-TkJUPiV09bPDj12ofEYGGSPJosbDTkHsLLlfo7O1jb8FK4HjHAhOG9NZxtNRiSpv4m01Ek7hlEpoQLvbX8dFDFMEo_0w9NNVFK35j7lmA0LKKl0uR24y">
+</div>
+<div class="p-6 text-center">
+<span class="font-label-sm text-[10px] text-secondary tracking-[0.2em] uppercase">Flared Poetry</span>
+<h3 class="font-headline-md text-xl text-primary mt-1 mb-3">Anarkalis&nbsp;</h3>
+<a class="inline-flex items-center font-label-md text-xs tracking-[0.18em] text-primary group-hover:text-secondary uppercase transition-colors" href="#collections">
+              Discover Silhouettes <span class="material-symbols-outlined text-sm ml-1 group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</a>
+</div>
+</div>
+<!-- Card 4 -->
+<div class="group relative overflow-hidden bg-surface-container-lowest border border-secondary/20 hover:border-secondary transition-all duration-300">
+<div class="aspect-[3/4] overflow-hidden bg-surface-container">
+<img alt="Bridal &amp; Festive Couture" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCoiMjnL0CHkh43GWUfqAGbjW_JH27RkZUMIjm2lwN5TCM956qjebMUxhasJ1E50Zev3tp-ekDNeLwhHbCEhX9-n1GCE6fatf9gbrQxlR39tKOt_5cH4aNO1lDhXMvPeQoiCjh4J0vKHqQuzK2IitNFN7ozWfwQSFGAIRPbH0oPGJwae3Ioo99RYcI1mfFMpuMO_3xHaKLtKt0kx4XT1OlP3DS4J9B0inoiaAQUuGH-UMeentKls3ed">
+</div>
+<div class="p-6 text-center">
+<span class="font-label-sm text-[10px] text-secondary tracking-[0.2em] uppercase">Heirloom Troves</span>
+<h3 class="font-headline-md text-xl text-primary mt-1 mb-3">Bridal &amp; Festive Couture</h3>
+<a class="inline-flex items-center font-label-md text-xs tracking-[0.18em] text-primary group-hover:text-secondary uppercase transition-colors" href="#bespoke">
+              Discover Silhouettes <span class="material-symbols-outlined text-sm ml-1 group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</a>
+</div>
+</div>
+</div>
+</section>
+<!-- 4. HERITAGE CRAFTSMANSHIP STRIP ("THE SOUL OF INDIAN KARIGARI") -->
+<section class="w-full py-20 bg-primary-container text-surface relative overflow-hidden border-y border-secondary/30" id="karigari">
+<div class="max-w-7xl mx-auto px-margin-mobile md:px-margin-tablet lg:px-margin">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+<div class="lg:col-span-7">
+<span class="font-label-sm text-xs text-secondary-fixed tracking-[0.28em] uppercase block mb-3">Heritage &amp; Artistry</span>
+<h2 class="font-headline-lg text-3xl md:text-5xl text-surface font-medium leading-tight mb-6">
+              The Soul of Indian Karigari
+            </h2>
+<p class="font-body-lg text-base text-inverse-on-surface/85 leading-relaxed mb-6 font-light">
+              Every Vivek Fashion ensemble is an ode to ancient Indian atelier traditions. From Lucknowi dabka and Marodi handwork to genuine Varanasi real zari weaves, our karigars devote generations of inherited instinct to render pieces that transcend ephemeral trends.
+            </p>
+<div class="grid grid-cols-3 gap-6 pt-6 border-t border-secondary/25">
+<div>
+<span class="font-headline-md text-3xl md:text-4xl text-secondary-container font-semibold block">350+</span>
+<span class="font-label-sm text-[11px] text-inverse-on-surface/70 uppercase tracking-widest mt-1 block">Master Karigars</span>
+</div>
+<div>
+<span class="font-headline-md text-3xl md:text-4xl text-secondary-container font-semibold block">120+</span>
+<span class="font-label-sm text-[11px] text-inverse-on-surface/70 uppercase tracking-widest mt-1 block">Hours per Ensemble</span>
+</div>
+<div>
+<span class="font-headline-md text-3xl md:text-4xl text-secondary-container font-semibold block">100%</span>
+<span class="font-label-sm text-[11px] text-inverse-on-surface/70 uppercase tracking-widest mt-1 block">Pure Silks &amp; Zari</span>
+</div>
+</div>
+</div>
+<div class="lg:col-span-5 relative">
+<div class="border border-secondary/40 p-2 bg-primary/40 shadow-2xl">
+<img alt="Karigar intricate embroidery craft" class="w-full h-[400px] object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDYXdQDsWJyg6f5KhtWTeomvhFVn4Iv5hKGiqZkw3loQyKN3QohxbFHu5DJfZhm1HkMiohcWOsj2WgiRbC2P4SKf1o07igdy4mn_yPKzUeULi5LxADDdwCvqlXlOr9lOZskeI5reIDV0miZeEN51xubwbhFPnUiVLAtvPHrbNmgKRsNe9aS3ggvb4RsZN1e7OrCsmc2KVIUs4j623rA9FzCVwwvV_CukCJin3DE9AOuiJV3MIlNmV75">
+</div>
+<div class="absolute -bottom-5 -left-5 bg-[#00081e] border border-secondary px-6 py-4 hidden sm:block">
+<span class="font-label-sm text-[10px] text-secondary tracking-[0.25em] uppercase block">Certified Authenticity</span>
+<span class="font-headline-sm text-sm text-surface tracking-wider">Unadulterated Heirlooms</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- 5. SIGNATURE ARRIVALS / VAULT (ALL PRICING STRICTLY REMOVED) -->
+<section class="w-full py-20 px-margin-mobile md:px-margin-tablet lg:px-margin bg-surface relative">
+<div class="flex flex-col md:flex-row md:items-end justify-between mb-14 relative">
+<div>
+<span class="font-label-sm text-xs text-secondary tracking-[0.28em] uppercase block mb-2">The Private Vault</span>
+<h2 class="font-headline-lg text-3xl md:text-4xl text-primary font-medium tracking-wide">Signature Arrivals</h2>
+</div>
+<p class="font-label-md text-xs text-on-surface-variant tracking-[0.18em] uppercase mt-4 md:mt-0">Private Salon Viewing by Consignment</p>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 relative">
+<!-- Ensemble 1 -->
+<div class="group flex flex-col bg-surface-container-lowest border border-secondary/20 hover:border-secondary transition-all">
+<div class="relative aspect-[3/4] overflow-hidden bg-surface-container">
+<img alt="Noor Jahan Peplum Sharara" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuALH3YS2cqiZzQ0oHyJthrHrcjeFw7UqNr4xhZ7JcybtlCxMWlRylHp0LwiFkRtdihHclgQti_vNtwodhDrvdlaOeGzJz-1SrQlYBinNF1_RA_KiPfGpvBQJnnqyro6WGe61s46unTmxIS1wA7eN7I3jgchkRDPCr5Q7ewc8Wh2HNmAo1Tt_89wN9MYOwS7Ud_4RRxdXXgdf7HCs_0RulOXiY7zUKHlRTeuwnvDAI-iKixmu4oXfstH">
+<span class="absolute top-3 left-3 bg-surface/90 backdrop-blur-sm text-primary font-label-sm text-[9px] uppercase tracking-[0.2em] px-3 py-1 border border-secondary/30">
+              Silk Organza
+            </span>
+</div>
+<div class="p-5 flex flex-col flex-1 justify-between">
+<div>
+<h3 class="font-headline-md text-lg text-primary tracking-wide mb-1">Noor Jahan Peplum Sharara</h3>
+<p class="font-body-sm text-xs text-on-surface-variant mb-4">Embroidered pearls, resham jaal &amp; scalloped hem.</p>
+</div>
+<!-- PRICE COMPLETELY REMOVED -->
+<button class="w-full py-2.5 px-4 bg-primary text-surface font-label-md text-xs uppercase tracking-[0.18em] hover:bg-secondary transition-colors" type="button">
+              Inquire Atelier
+            </button>
+</div>
+</div>
+<!-- Ensemble 2 -->
+<div class="group flex flex-col bg-surface-container-lowest border border-secondary/20 hover:border-secondary transition-all">
+<div class="relative aspect-[3/4] overflow-hidden bg-surface-container">
+<img alt="Gulabi Gota Anarkali Set" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCHSXy9TTfsssaBc6BoypYmhHULp6sHpfpuLA80gatYti5k4tIUpJyayoIauQU106SqWsAFV6fVPS1BhvMTJ89ehtwE3PN8996K36ml6JB4AAtBSesfF6qUssw_JWf3nUtSCJ-9S2M1qikext2RZioqqOPC_QTACVawN8XsbhCf4ZMWM1Dpjz0-5UI-iwu78WgAZ6dohWFoqRfnzItm9uKE3uHfLelkm_aRwPMo8s8IMBAduy_t7rRn">
+<span class="absolute top-3 left-3 bg-surface/90 backdrop-blur-sm text-primary font-label-sm text-[9px] uppercase tracking-[0.2em] px-3 py-1 border border-secondary/30">
+              Chanderi Brocade
+            </span>
+</div>
+<div class="p-5 flex flex-col flex-1 justify-between">
+<div>
+<h3 class="font-headline-md text-lg text-primary tracking-wide mb-1">Gulabi Gota Anarkali Set</h3>
+<p class="font-body-sm text-xs text-on-surface-variant mb-4">Handcrafted gotta patti work on hand-spun brocade.</p>
+</div>
+<!-- PRICE COMPLETELY REMOVED -->
+<button class="w-full py-2.5 px-4 bg-primary text-surface font-label-md text-xs uppercase tracking-[0.18em] hover:bg-secondary transition-colors" type="button">
+              Request Lookbook
+            </button>
+</div>
+</div>
+<!-- Ensemble 3 -->
+<div class="group flex flex-col bg-surface-container-lowest border border-secondary/20 hover:border-secondary transition-all">
+<div class="relative aspect-[3/4] overflow-hidden bg-surface-container">
+<img alt="Zeenat Mustard Cape Suit" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDiA4OiIjuorDCnOdWt9Bhmb5JAPQdsPjcj_XAZ2moi_XDKXP0i91MeqJSdnNhtB7DxfNy6eHaB44tjKnMWFrENWp3jSLRb2hKWVL-5737MptAMTCEjayvsScH3NfqmBK5PjNoGzjQuQIAd857UqFw88BOLDNXYc1WNllVZY0fC0MaaRwRy6vxefKNI3TkG8vlarkz3UozjM9f4gXUz3OjxSvCSYElIptUrXwI5ba41CW8KWUHqHEXU">
+<span class="absolute top-3 left-3 bg-surface/90 backdrop-blur-sm text-primary font-label-sm text-[9px] uppercase tracking-[0.2em] px-3 py-1 border border-secondary/30">
+              Georgette &amp; Tissue
+            </span>
+</div>
+<div class="p-5 flex flex-col flex-1 justify-between">
+<div>
+<h3 class="font-headline-md text-lg text-primary tracking-wide mb-1">Zeenat Mustard Cape Suit</h3>
+<p class="font-body-sm text-xs text-on-surface-variant mb-4">Floor-skimming cape tailored with zardozi borders.</p>
+</div>
+<!-- PRICE COMPLETELY REMOVED -->
+<button class="w-full py-2.5 px-4 bg-primary text-surface font-label-md text-xs uppercase tracking-[0.18em] hover:bg-secondary transition-colors" type="button">
+              Inquire Atelier
+            </button>
+</div>
+</div>
+<!-- Ensemble 4 -->
+<div class="group flex flex-col bg-surface-container-lowest border border-secondary/20 hover:border-secondary transition-all">
+<div class="relative aspect-[3/4] overflow-hidden bg-surface-container">
+<img alt="Mehrunissa Velvet Gharara" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAlXWVUdS0Ir2-WhebWDWlhF5R0icEPxj2DOw8sQqPmpIASJKfUEQqhSeuRekhOzrtnp2s1fsekTlcbG77ivjnryeA8cha0FWtMwzFe5P-qifxCM4Rln267552v37BtOC0KzMX4dAg5EJnizOd7ypdt9m2oqHSS3XqZa2XKVXz30Ml-2A8SbFVsjdPh7jE_E9BX_yyVpw-XOWEcWgE_suePC0kfKUBxQ0VPipK8U4vrmYe8rFarn4UK">
+<span class="absolute top-3 left-3 bg-surface/90 backdrop-blur-sm text-primary font-label-sm text-[9px] uppercase tracking-[0.2em] px-3 py-1 border border-secondary/30">
+              Micro Velvet
+            </span>
+</div>
+<div class="p-5 flex flex-col flex-1 justify-between">
+<div>
+<h3 class="font-headline-md text-lg text-primary tracking-wide mb-1">Mehrunissa Velvet Gharara</h3>
+<p class="font-body-sm text-xs text-on-surface-variant mb-4">Deep jewel tones enriched with tilla and dabka.</p>
+</div>
+<!-- PRICE COMPLETELY REMOVED -->
+<button class="w-full py-2.5 px-4 bg-primary text-surface font-label-md text-xs uppercase tracking-[0.18em] hover:bg-secondary transition-colors" type="button">
+              Request Lookbook
+            </button>
+</div>
+</div>
+</div>
+</section>
+<!-- 6. BESPOKE COUTURE CONCIERGE -->
+
+<!-- 7. ROYAL ACCOLADES -->
+<section class="w-full py-20 px-margin-mobile md:px-margin-tablet lg:px-margin bg-surface relative">
+<div class="text-center max-w-xl mx-auto mb-14 relative">
+<span class="font-label-sm text-xs text-secondary tracking-[0.28em] uppercase block mb-2">Client Patronage</span>
+<h2 class="font-headline-lg text-3xl md:text-4xl text-primary font-medium">Royal Accolades</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto relative">
+<div class="p-8 bg-surface-container-lowest border border-secondary/25 relative flex flex-col justify-between">
+<span class="font-headline-lg text-5xl text-secondary/40 leading-none select-none font-serif">“</span>
+<p class="font-body-md text-sm text-on-surface/90 italic leading-relaxed my-4">
+            Vivek Fashion designed my bridal sharara with such devotion. The zardozi motif carried memories of royal Awadh, yet was so featherlight to dance in.
+          </p>
+<div class="pt-4 border-t border-secondary/15">
+<span class="font-headline-sm text-sm text-primary font-medium block">Maharani Gayatri D.</span>
+<span class="font-label-sm text-[10px] text-secondary tracking-widest uppercase">Jaipur &amp; London</span>
+</div>
+</div>
+<div class="p-8 bg-surface-container-lowest border border-secondary/25 relative flex flex-col justify-between">
+<span class="font-headline-lg text-5xl text-secondary/40 leading-none select-none font-serif">“</span>
+<p class="font-body-md text-sm text-on-surface/90 italic leading-relaxed my-4">
+            The Indo-Western cape set turned heads at our family gala in Manhattan. The fabric finesse and fit rival European haute couture houses.
+          </p>
+<div class="pt-4 border-t border-secondary/15">
+<span class="font-headline-sm text-sm text-primary font-medium block">Rohini Singhania</span>
+<span class="font-label-sm text-[10px] text-secondary tracking-widest uppercase">New York City</span>
+</div>
+</div>
+<div class="p-8 bg-surface-container-lowest border border-secondary/25 relative flex flex-col justify-between">
+<span class="font-headline-lg text-5xl text-secondary/40 leading-none select-none font-serif">“</span>
+<p class="font-body-md text-sm text-on-surface/90 italic leading-relaxed my-4">
+            Their bespoke concierge delivered our trousseau with absolute grace. Truly the benchmark of Indian couture excellence.
+          </p>
+<div class="pt-4 border-t border-secondary/15">
+<span class="font-headline-sm text-sm text-primary font-medium block">Ayesha K. Merchant</span>
+<span class="font-label-sm text-[10px] text-secondary tracking-widest uppercase">Dubai DIFC</span>
+</div>
+</div>
+</div>
+</section>
+<!-- 8. SOCIAL HAVELÎ / LOOKBOOK GALLERY -->
+<section class="w-full py-16 bg-surface-container-low border-t border-secondary/20">
+<div class="px-margin-mobile md:px-margin-tablet lg:px-margin mb-8 flex items-center justify-between">
+<div>
+<span class="font-label-sm text-xs text-secondary tracking-[0.25em] uppercase block">Atelier Journal</span>
+<h2 class="font-headline-md text-2xl text-primary">#VivekFashionMaison</h2>
+</div>
+<a class="font-label-md text-xs text-primary hover:text-secondary uppercase tracking-[0.2em] transition-colors" href="#">
+          View Instagram Journal →
+        </a>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-5 gap-3 px-margin-mobile md:px-margin-tablet lg:px-margin">
+<div class="aspect-square overflow-hidden bg-surface-container">
+<img alt="Craft Detail" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDxw9wH1haRaFYx6idujn5RvwHyKl60LQWFcAVUCinsdDDIk-aElSjG86RJyAhQQabAq8hcnxFp9zH9mWgnu1jCYdizonJ19vuMSdPVD5gpQ8LrGBg5nqfkItD7Ldq7QPr63cEwahcucUFCCmqJ4Ub-0KvYguVQUWZdWzqAfwa-n3BZ5M3nKg-3WCuDgX7WXsoCMWT4jVn5dX-qd6HBn3zgca-nEC-FuhHmcrcah0_a0VqVxD3DLT0d">
+</div>
+<div class="aspect-square overflow-hidden bg-surface-container">
+<img alt="Sharara Detail" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCaLSCJ1jCpCvEmTcmqMnqgHvaexEB3OzdT7f0kJGkMEWIjAU1rw7q7gKL9SihDZQhQPwHTHhEsLWrYcG8-EulxznxoXzuNoWIDW167lHORYJbN7j8ol4Hrg6L8Z9qlX3V4QEae-ZWD84eSktfD_6sRkh5fO62ZB7_F1_KB_bGg_EIzamuX1xvS73D_q5nlymsmL_qIsxji1-roZBc0FQNecOyVQ9OOuSCBrxssLpEBchch6bEa2Mcy">
+</div>
+<div class="aspect-square overflow-hidden bg-surface-container">
+<img alt="Zari Embroidery" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCpzUavrMv8EoLk6sX-Ss1XidmfHC9Lj5Dxlb-dKwdax0RZTO58BN8Xd4e4F-IRMXS7Mhyj6yN3fiG1Fw-DKRPS-FzbxGRWb4pWDrwnHMrKXZLPp5_gBSkiZrqUI-OJwYYnE5kKZyLFwXTJxt8IOyUuF6tW4r7PYdyaFXuIT57xCAdNGkfxAozMgMhjRbDHVLqNL4CGFWynQWEIL-KtBPV3QcGHM_X2p04Z7_vwUo34qYKqEtVyHNDN">
+</div>
+<div class="aspect-square overflow-hidden bg-surface-container">
+<img alt="Festive Trousseau" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAR_tTEkBARI70piWk_yXYJJYuZGIMPblUzHHPNr-sRsD0HlkUqgTowXkGcg4bd2ZjrxtveP6o0sT-lNLQlLqQOQDBGVRn8BD4PqTlfEKnvvjd1b5C5dkEu9BPaIGmUfrQKoaEYDkS0Erzmi7Vk2c4DNhtwvJfTMeh1QVO6dpBzI78Ui4P8TBAoqDdKgQKO6zUrd7tJ9TTszSUYEeyiofOnaUx2OmlVph0hSvb7z4dWJeZ4aTb-mE5r">
+</div>
+<div class="aspect-square overflow-hidden bg-surface-container col-span-2 md:col-span-1">
+<img alt="Gold Weaving" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAQm5Zn87CA3kwXT6IAi934Fa7uTChnjrjpfgbxheHLWrlS-PgY40BztNr9JF_o9Fqu6wkgyDWSOTpnvRHHQqkxxD147X58PlpNpHml6BRU484Mic8KHcdeSbmgtJob8Z9q3xvnvgJ7UP70GEt_F2Cuu1OfbmlPzFUgeWQh-YdlCN66ke7YihzxfY08fNLhmzs8stPftUwp0hIL8rBAl-Z-0_CSFRvYLy1XPspR4nptflkfE7c57O0N">
+</div>
+</div>
+</section>
+</main>
+<!-- 9. DEEP MIDNIGHT NAVY FOOTER -->
+<footer class="w-full bg-[#142038] text-surface pt-space-xl pb-space-lg border-t border-secondary/30">
+<div class="w-full px-margin-mobile md:px-margin-tablet lg:px-margin">
+<!-- Crest Header -->
+<div class="flex flex-col items-center justify-center mb-space-lg text-center">
+<div class="w-16 h-16 rounded-full border border-secondary/50 p-1 flex items-center justify-center mb-space-sm bg-primary">
+<img alt="Vivek Fashion Emblem" class="w-12 h-12 rounded-full object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCLAQu74WjR7MvG_3DPIgWugP1NswKiWuhenulE3dm9q8L0UUt2GSlGfVJxwQNyC9yKi0BpSm-fXsgOpmhT0wxGLWcVA4lWqD2V4xFS4Lwg9AFRdSGwJhlgHpnPhly6yOuqUHC1T4oz-IZ_F1CV9IKqhYFj12xnrtr9KL3SaE95p4_PAzPsn1NqBcUDTEC9WJ_nrmshLw6cTigyawY5bSYj63QTAz3GTS1CchiWvAzcLykGtcfYrYw0FXtsMhJLgV6XyA">
+</div>
+<h3 class="font-headline-md text-headline-md text-secondary tracking-widest uppercase">Vivek Fashion</h3>
+
+<div class="flex items-center justify-center w-full max-w-md my-space-md gap-space-sm">
+<span class="h-px flex-1 bg-gradient-to-r from-transparent via-secondary/40 to-secondary"></span>
+<span class="material-symbols-outlined text-secondary text-base">diamond</span>
+<span class="h-px flex-1 bg-gradient-to-l from-transparent via-secondary/40 to-secondary"></span>
+</div>
+</div>
+<!-- Links Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-gutter mb-space-xl"><div class="flex flex-col space-y-space-sm">
+<h4 class="font-headline-sm text-headline-sm text-secondary tracking-wider uppercase mb-space-xs">The Maison</h4>
+<a class="font-body-sm text-body-sm text-inverse-on-surface/80 hover:text-secondary transition-colors" href="#">Our Heritage</a>
+<a class="font-body-sm text-body-sm text-inverse-on-surface/80 hover:text-secondary transition-colors" href="#">Karigari &amp; Craft</a>
+<a class="font-body-sm text-body-sm text-inverse-on-surface/80 hover:text-secondary transition-colors" href="#">Textiles</a>
+</div>
+<div class="flex flex-col space-y-space-sm">
+<h4 class="font-headline-sm text-headline-sm text-secondary tracking-wider uppercase mb-space-xs">Client Concierge</h4>
+<a class="font-body-sm text-body-sm text-inverse-on-surface/80 hover:text-secondary transition-colors" href="#">Private Appointments</a>
+<a class="font-body-sm text-body-sm text-inverse-on-surface/80 hover:text-secondary transition-colors" href="#">Bespoke Fitting</a>
+<a class="font-body-sm text-body-sm text-inverse-on-surface/80 hover:text-secondary transition-colors" href="#">Global Delivery</a>
+</div>
+<div class="flex flex-col space-y-space-sm">
+<h4 class="font-headline-sm text-headline-sm text-secondary tracking-wider uppercase mb-space-xs">Boutiques</h4>
+<span class="font-body-sm text-body-sm text-inverse-on-surface/80">New Delhi</span>
+<span class="font-body-sm text-body-sm text-inverse-on-surface/80">Mumbai</span>
+<span class="font-body-sm text-body-sm text-inverse-on-surface/80">London</span>
+</div>
+<div class="flex flex-col space-y-space-sm">
+<h4 class="font-headline-sm text-headline-sm text-secondary tracking-wider uppercase mb-space-xs">The Gazette</h4>
+<form class="flex flex-col space-y-space-xs mt-1" onsubmit="return false;">
+<div class="flex border border-secondary/50 bg-primary/60">
+<input class="bg-transparent px-space-sm py-space-xs font-body-sm text-body-sm text-surface placeholder:text-outline-variant focus:outline-none flex-1" placeholder="Email Address" type="email">
+<button class="bg-secondary text-primary px-space-md font-label-sm text-label-sm uppercase tracking-widest hover:bg-secondary-fixed transition-colors font-semibold" type="button">Join</button>
+</div>
+</form>
+</div></div>
+<!-- Copyright Bar -->
+<div class="border-t border-secondary/20 pt-space-md flex flex-col md:flex-row items-center justify-between gap-space-sm font-label-sm text-label-sm text-inverse-on-surface/60 tracking-wider uppercase">
+<p class="">© 2025 VIVEK FASHION. ALL RIGHTS RESERVED.</p>
+<div class="flex items-center gap-space-lg">
+<a class="hover:text-secondary transition-colors" href="#">Privacy Charter</a>
+<a class="hover:text-secondary transition-colors" href="#">Atelier Terms</a>
+<a class="hover:text-secondary transition-colors" href="#">Certificate of Authenticity</a>
+</div>
+</div>
+</div>
+</footer>
+
+
+</body></html>
