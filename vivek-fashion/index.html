@@ -1,7 +1,10 @@
-<!DOCTYPE html><html lang="en" style=""><head>
+<!DOCTYPE html><html lang="en" class="scroll-smooth" style="scroll-padding-top: 4rem;"><head>
 <meta charset="utf-8">
 <meta content="width=device-width, initial-scale=1.0" name="viewport">
 <meta content="web_standard" name="shell-type">
+<title>Vivek Fashion | Royal Indian Atelier</title>
+<meta name="description" content="Vivek Fashion: handcrafted shararas, ghagras, anarkalis, Indo-Western suits and bridal couture with heritage zardozi and zari work.">
+<link rel="icon" href="https://lh3.googleusercontent.com/aida-public/AB6AXuC399cZlzSHuUcNy0yUrk7pmQpv5xBmdNwqZ_HBpGQ9lHf8o2CUvCBQGfJVV5qmffsGLw0h_p8J3Qz-DN6o9rqeADsBYE4Z2nyt63Xoq1mtPl3u4wXnMeCYelx9VZxeRb2r_w_JxDSsVJgpqr3flnJxkWyoW5tXIepwbBecCMDB8XQO76a7jIYW_1QA6PHoeLIup9kCGU-uOpxGF41YJ1WldJ57ufn2IPyptYqsn_jLRqKwpJDKk9s8G9gHKqxD-pCrjA">
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&amp;family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&amp;display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
 <style>
@@ -11,7 +14,6 @@
       main > :first-child { margin-top: 0 !important; }
       main > :last-child { margin-bottom: 0 !important; }
     }
-    ::-webkit-scrollbar { display: none; }
   </style>
 <script src="https://cdn.tailwindcss.com"></script>
 <script id="tailwind-config">
@@ -86,6 +88,13 @@
             "space-sm": "0.5rem",
             "gutter-mobile": "0.75rem"
           },
+          fontSize: {
+            "headline-md": ["1.75rem", { lineHeight: "2.25rem" }],
+            "headline-sm": ["1rem", { lineHeight: "1.5rem" }],
+            "body-md": ["1rem", { lineHeight: "1.5rem" }],
+            "body-sm": ["0.875rem", { lineHeight: "1.25rem" }],
+            "label-sm": ["0.75rem", { lineHeight: "1rem" }]
+          },
           fontFamily: {
             "display-md": ["Playfair Display"],
             "headline-lg": ["Playfair Display"],
@@ -106,7 +115,7 @@
     };
   </script>
 </head>
-<body class="bg-surface font-body-md text-body-md text-on-surface antialiased selection:bg-secondary/20" style="background-color: rgb(251, 249, 245); background-image: url(&quot;https://lh3.googleusercontent.com/aida-public/AB6AXuCBorvL7PMed5VU0LXUhDXBU3SJeYFwkN17E3qRC9Z0pyywwFP4PwgZHeL0T5yqoU9etNsXhsuj3Ch6pjMWl6nUZhBCxHOkE5Ga5JiU-69n_UMmDqNzMvyNKXHSaAMNejdk_ppFEHIWP2tmAnkjkCoQ81C5lGZAeHGRjGDRLaLgJdDMHUldviJL9qx24d-begzSWE6Xhc1y8iwmRrWlLERS5NinqPEcxoJ-a1sjojtjbtN-rp2Lry1uN7KF87HhKSwTfA&quot;); background-size: 550px auto; background-repeat: repeat; background-attachment: fixed;">
+<body class="bg-surface font-body-md text-body-md text-on-surface antialiased selection:bg-secondary/20">
 <!-- 1. SLEEK MINIMAL LUXURY HEADER -->
 <header class="fixed top-0 left-0 w-full z-50 bg-[#fbf9f5]/95 backdrop-blur-md border-b border-secondary/25 transition-all">
 <div class="h-16 w-full px-margin-mobile md:px-margin-tablet lg:px-margin flex items-center justify-between">
@@ -119,14 +128,34 @@
 </div>
 </a>
 <!-- Center: Refined Navigation Links -->
-
+<nav aria-label="Main" class="hidden lg:flex items-center gap-8">
+<a class="font-label-md text-xs uppercase tracking-[0.2em] text-primary hover:text-secondary transition-colors" href="#collections">Collections</a>
+<a class="font-label-md text-xs uppercase tracking-[0.2em] text-primary hover:text-secondary transition-colors" href="#karigari">Karigari</a>
+<a class="font-label-md text-xs uppercase tracking-[0.2em] text-primary hover:text-secondary transition-colors" href="#arrivals">Arrivals</a>
+<a class="font-label-md text-xs uppercase tracking-[0.2em] text-primary hover:text-secondary transition-colors" href="#accolades">Accolades</a>
+<a class="font-label-md text-xs uppercase tracking-[0.2em] text-primary hover:text-secondary transition-colors" href="#journal">Journal</a>
+</nav>
 <!-- Right: Minimal Gold Outlined CTA -->
-<div class="flex items-center">
-<a class="inline-flex items-center font-label-md text-xs uppercase tracking-[0.2em] px-5 py-2 border border-secondary text-primary hover:bg-primary hover:text-surface hover:border-primary transition-all duration-300 shadow-sm" href="#bespoke">
+<div class="flex items-center gap-3">
+<a class="hidden sm:inline-flex items-center font-label-md text-xs uppercase tracking-[0.2em] px-5 py-2 border border-secondary text-primary hover:bg-primary hover:text-surface hover:border-primary transition-all duration-300 shadow-sm" href="#bespoke">
           Book Appointment
         </a>
+<button aria-controls="mobile-menu" aria-expanded="false" aria-label="Open menu" class="lg:hidden w-10 h-10 flex items-center justify-center text-primary border border-secondary/40 hover:border-secondary transition-colors" id="menu-toggle" type="button">
+<span aria-hidden="true" class="material-symbols-outlined">menu</span>
+</button>
 </div>
 </div>
+<!-- Mobile Menu -->
+<nav aria-label="Main" class="hidden lg:hidden border-t border-secondary/20 bg-[#fbf9f5] px-margin-mobile md:px-margin-tablet py-4" id="mobile-menu">
+<ul class="flex flex-col divide-y divide-secondary/15">
+<li><a class="block py-3 font-label-md text-xs uppercase tracking-[0.2em] text-primary hover:text-secondary" href="#collections">Collections</a></li>
+<li><a class="block py-3 font-label-md text-xs uppercase tracking-[0.2em] text-primary hover:text-secondary" href="#karigari">Karigari</a></li>
+<li><a class="block py-3 font-label-md text-xs uppercase tracking-[0.2em] text-primary hover:text-secondary" href="#arrivals">Signature Arrivals</a></li>
+<li><a class="block py-3 font-label-md text-xs uppercase tracking-[0.2em] text-primary hover:text-secondary" href="#accolades">Accolades</a></li>
+<li><a class="block py-3 font-label-md text-xs uppercase tracking-[0.2em] text-primary hover:text-secondary" href="#journal">Journal</a></li>
+<li class="pt-4 sm:hidden"><a class="block text-center font-label-md text-xs uppercase tracking-[0.2em] px-5 py-3 border border-secondary text-primary hover:bg-primary hover:text-surface transition-all" href="#bespoke">Book Appointment</a></li>
+</ul>
+</nav>
 </header>
 <!-- MAIN CONTENT -->
 <main class="w-full pt-16 bg-surface min-h-screen">
@@ -151,7 +180,7 @@
 <h2 class="font-headline-lg text-3xl md:text-4xl text-primary font-medium tracking-wide">The Curated Ensembles</h2>
 <div class="flex items-center justify-center w-24 mx-auto my-4 gap-2">
 <span class="h-px flex-1 bg-secondary/50"></span>
-<span class="material-symbols-outlined text-secondary text-sm">diamond</span>
+<span aria-hidden="true" class="material-symbols-outlined text-secondary text-sm">diamond</span>
 <span class="h-px flex-1 bg-secondary/50"></span>
 </div>
 <p class="font-body-md text-sm text-on-surface-variant">Intricately draped silhouettes synthesizing regal Mughal durbars with contemporary evening poise.</p>
@@ -160,13 +189,13 @@
 <!-- Card 1 -->
 <div class="group relative overflow-hidden bg-surface-container-lowest border border-secondary/20 hover:border-secondary transition-all duration-300">
 <div class="aspect-[3/4] overflow-hidden bg-surface-container">
-<img alt="Sharara &amp; Gharara Sets" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCswPm--1_qYnjRBmOSbDyc1wd09nHv0dvPLUm_UWk1Iw7q_it804TQ23jAE6dowJ6s0wDxBwdyUBSQcW0tp9xgh7VK5zPYzVQlGBWqWPt2G3ZoxdsEApatPoZMVSPh-XGdY3Q5fyODMhijZ921zuThpaHpd5buWUx2sExdx796ZewCo8khLfGuyOZhHJp6YnLmwxfweEBgsHjOlvrdQo9JZDHsJrR4mc2Dm4el_axWB5zcDAvwaZ0t">
+<img alt="Sharara &amp; Ghagra Sets" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCswPm--1_qYnjRBmOSbDyc1wd09nHv0dvPLUm_UWk1Iw7q_it804TQ23jAE6dowJ6s0wDxBwdyUBSQcW0tp9xgh7VK5zPYzVQlGBWqWPt2G3ZoxdsEApatPoZMVSPh-XGdY3Q5fyODMhijZ921zuThpaHpd5buWUx2sExdx796ZewCo8khLfGuyOZhHJp6YnLmwxfweEBgsHjOlvrdQo9JZDHsJrR4mc2Dm4el_axWB5zcDAvwaZ0t">
 </div>
 <div class="p-6 text-center">
 <span class="font-label-sm text-[10px] text-secondary tracking-[0.2em] uppercase">Signature Drape</span>
 <h3 class="font-headline-md text-xl text-primary mt-1 mb-3">Sharara &amp; Ghagra Sets</h3>
 <a class="inline-flex items-center font-label-md text-xs tracking-[0.18em] text-primary group-hover:text-secondary uppercase transition-colors" href="#shararas">
-              Discover Silhouettes <span class="material-symbols-outlined text-sm ml-1 group-hover:translate-x-1 transition-transform">arrow_forward</span>
+              Discover Silhouettes <span aria-hidden="true" class="material-symbols-outlined text-sm ml-1 group-hover:translate-x-1 transition-transform">arrow_forward</span>
 </a>
 </div>
 </div>
@@ -179,7 +208,7 @@
 <span class="font-label-sm text-[10px] text-secondary tracking-[0.2em] uppercase">Modern Royalty</span>
 <h3 class="font-headline-md text-xl text-primary mt-1 mb-3">Indo-Western Suits</h3>
 <a class="inline-flex items-center font-label-md text-xs tracking-[0.18em] text-primary group-hover:text-secondary uppercase transition-colors" href="#indo-western">
-              Discover Silhouettes <span class="material-symbols-outlined text-sm ml-1 group-hover:translate-x-1 transition-transform">arrow_forward</span>
+              Discover Silhouettes <span aria-hidden="true" class="material-symbols-outlined text-sm ml-1 group-hover:translate-x-1 transition-transform">arrow_forward</span>
 </a>
 </div>
 </div>
@@ -190,9 +219,9 @@
 </div>
 <div class="p-6 text-center">
 <span class="font-label-sm text-[10px] text-secondary tracking-[0.2em] uppercase">Flared Poetry</span>
-<h3 class="font-headline-md text-xl text-primary mt-1 mb-3">Anarkalis&nbsp;</h3>
+<h3 class="font-headline-md text-xl text-primary mt-1 mb-3">Anarkalis</h3>
 <a class="inline-flex items-center font-label-md text-xs tracking-[0.18em] text-primary group-hover:text-secondary uppercase transition-colors" href="#collections">
-              Discover Silhouettes <span class="material-symbols-outlined text-sm ml-1 group-hover:translate-x-1 transition-transform">arrow_forward</span>
+              Discover Silhouettes <span aria-hidden="true" class="material-symbols-outlined text-sm ml-1 group-hover:translate-x-1 transition-transform">arrow_forward</span>
 </a>
 </div>
 </div>
@@ -205,7 +234,7 @@
 <span class="font-label-sm text-[10px] text-secondary tracking-[0.2em] uppercase">Heirloom Troves</span>
 <h3 class="font-headline-md text-xl text-primary mt-1 mb-3">Bridal &amp; Festive Couture</h3>
 <a class="inline-flex items-center font-label-md text-xs tracking-[0.18em] text-primary group-hover:text-secondary uppercase transition-colors" href="#bespoke">
-              Discover Silhouettes <span class="material-symbols-outlined text-sm ml-1 group-hover:translate-x-1 transition-transform">arrow_forward</span>
+              Discover Silhouettes <span aria-hidden="true" class="material-symbols-outlined text-sm ml-1 group-hover:translate-x-1 transition-transform">arrow_forward</span>
 </a>
 </div>
 </div>
@@ -251,7 +280,7 @@
 </div>
 </section>
 <!-- 5. SIGNATURE ARRIVALS / VAULT (ALL PRICING STRICTLY REMOVED) -->
-<section class="w-full py-20 px-margin-mobile md:px-margin-tablet lg:px-margin bg-surface relative">
+<section class="w-full py-20 px-margin-mobile md:px-margin-tablet lg:px-margin bg-surface relative" id="arrivals">
 <div class="flex flex-col md:flex-row md:items-end justify-between mb-14 relative">
 <div>
 <span class="font-label-sm text-xs text-secondary tracking-[0.28em] uppercase block mb-2">The Private Vault</span>
@@ -341,7 +370,7 @@
 <!-- 6. BESPOKE COUTURE CONCIERGE -->
 
 <!-- 7. ROYAL ACCOLADES -->
-<section class="w-full py-20 px-margin-mobile md:px-margin-tablet lg:px-margin bg-surface relative">
+<section class="w-full py-20 px-margin-mobile md:px-margin-tablet lg:px-margin bg-surface relative" id="accolades">
 <div class="text-center max-w-xl mx-auto mb-14 relative">
 <span class="font-label-sm text-xs text-secondary tracking-[0.28em] uppercase block mb-2">Client Patronage</span>
 <h2 class="font-headline-lg text-3xl md:text-4xl text-primary font-medium">Royal Accolades</h2>
@@ -380,7 +409,7 @@
 </div>
 </section>
 <!-- 8. SOCIAL HAVELÎ / LOOKBOOK GALLERY -->
-<section class="w-full py-16 bg-surface-container-low border-t border-secondary/20">
+<section class="w-full py-16 bg-surface-container-low border-t border-secondary/20" id="journal">
 <div class="px-margin-mobile md:px-margin-tablet lg:px-margin mb-8 flex items-center justify-between">
 <div>
 <span class="font-label-sm text-xs text-secondary tracking-[0.25em] uppercase block">Atelier Journal</span>
@@ -421,7 +450,7 @@
 
 <div class="flex items-center justify-center w-full max-w-md my-space-md gap-space-sm">
 <span class="h-px flex-1 bg-gradient-to-r from-transparent via-secondary/40 to-secondary"></span>
-<span class="material-symbols-outlined text-secondary text-base">diamond</span>
+<span aria-hidden="true" class="material-symbols-outlined text-secondary text-base">diamond</span>
 <span class="h-px flex-1 bg-gradient-to-l from-transparent via-secondary/40 to-secondary"></span>
 </div>
 </div>
@@ -448,14 +477,15 @@
 <h4 class="font-headline-sm text-headline-sm text-secondary tracking-wider uppercase mb-space-xs">The Gazette</h4>
 <form class="flex flex-col space-y-space-xs mt-1" onsubmit="return false;">
 <div class="flex border border-secondary/50 bg-primary/60">
-<input class="bg-transparent px-space-sm py-space-xs font-body-sm text-body-sm text-surface placeholder:text-outline-variant focus:outline-none flex-1" placeholder="Email Address" type="email">
+<label class="sr-only" for="gazette-email">Email address</label>
+<input autocomplete="email" id="gazette-email" class="bg-transparent px-space-sm py-space-xs font-body-sm text-body-sm text-surface placeholder:text-outline-variant focus:outline-none focus-visible:ring-1 focus-visible:ring-secondary flex-1 min-w-0" placeholder="Email Address" type="email">
 <button class="bg-secondary text-primary px-space-md font-label-sm text-label-sm uppercase tracking-widest hover:bg-secondary-fixed transition-colors font-semibold" type="button">Join</button>
 </div>
 </form>
 </div></div>
 <!-- Copyright Bar -->
 <div class="border-t border-secondary/20 pt-space-md flex flex-col md:flex-row items-center justify-between gap-space-sm font-label-sm text-label-sm text-inverse-on-surface/60 tracking-wider uppercase">
-<p class="">© 2025 VIVEK FASHION. ALL RIGHTS RESERVED.</p>
+<p class="">© 2026 VIVEK FASHION. ALL RIGHTS RESERVED.</p>
 <div class="flex items-center gap-space-lg">
 <a class="hover:text-secondary transition-colors" href="#">Privacy Charter</a>
 <a class="hover:text-secondary transition-colors" href="#">Atelier Terms</a>
@@ -464,6 +494,23 @@
 </div>
 </div>
 </footer>
-
-
+<script>
+  (function () {
+    var toggle = document.getElementById("menu-toggle");
+    var menu = document.getElementById("mobile-menu");
+    var icon = toggle.querySelector(".material-symbols-outlined");
+    function setOpen(open) {
+      menu.classList.toggle("hidden", !open);
+      toggle.setAttribute("aria-expanded", String(open));
+      toggle.setAttribute("aria-label", open ? "Close menu" : "Open menu");
+      icon.textContent = open ? "close" : "menu";
+    }
+    toggle.addEventListener("click", function () {
+      setOpen(menu.classList.contains("hidden"));
+    });
+    menu.addEventListener("click", function (e) {
+      if (e.target.closest("a")) setOpen(false);
+    });
+  })();
+</script>
 </body></html>
