@@ -14,20 +14,20 @@
       main > :first-child { margin-top: 0 !important; }
       main > :last-child { margin-bottom: 0 !important; }
     }
-    /* Blush pink page colour, with the mandala wallpaper only as a soft
-       texture on top. The mandala is a fixed layer, so it also works on
-       iPhones, which ignore background-attachment: fixed. */
+    /* Blush pink page colour with the wallpaper's mandalas recoloured to gold
+       (pink made transparent, copper lines turned gold; upscaled 3x). A
+       fixed layer, so it also works on iPhones, which ignore
+       background-attachment: fixed. */
     body { background-color: #f3d5d1; }
     body::before {
       content: ""; position: fixed; inset: 0; z-index: -1; pointer-events: none;
-      background: url("images/mandala-bg-1104.webp") center / cover no-repeat;
-      background-image: image-set(url("images/mandala-bg-1104.webp") 1x, url("images/mandala-bg.webp") 2x);
-      opacity: 0.3;
-      filter: contrast(1.15);
+      background: url("images/mandala-gold-1104.webp") center / cover no-repeat;
+      background-image: image-set(url("images/mandala-gold-1104.webp") 1x, url("images/mandala-gold.webp") 2x);
+      opacity: 0.65;
     }
     /* Large screens stretch the wallpaper most, so always use the full-size file. */
     @media (min-width: 1024px) {
-      body::before { background-image: url("images/mandala-bg.webp"); }
+      body::before { background-image: url("images/mandala-gold.webp"); }
     }
     /* Header: transparent at the top of the page, white once scrolled
        (and while the mobile menu is open). */
